@@ -47,8 +47,12 @@ return packer.startup(function(use)
 
   use 'eddyekofo94/gruvbox-flat.nvim'
 
-  use 'nvim-treesitter/nvim-treesitter'
-
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
+  
+  use "p00f/nvim-ts-rainbow"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

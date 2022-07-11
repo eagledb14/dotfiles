@@ -1,5 +1,4 @@
 
-require('plugins')
-require('treesitter')
-require('config')
---require('treesitter')
+require 'plugins'
+require 'treesitter'
+require 'config'
