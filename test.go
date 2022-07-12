@@ -10,6 +10,8 @@ func main() {
   fmt.Println("hello world")
   test()  
   thing()
+
+  fmt.
 }
 
 func test() {
