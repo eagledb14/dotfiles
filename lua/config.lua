@@ -7,7 +7,7 @@ o.errorbells = false
 o.incsearch = true
 o.scrolloff = 8
 o.showmode = false
-
+o.autochdir = true
 -- window
 local w = vim.wo
 
@@ -41,4 +41,8 @@ vim.cmd[[
   endfunction
 
 ]]
+
+
+--keybindings
+
 

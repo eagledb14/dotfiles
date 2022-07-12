@@ -11,7 +11,7 @@ func main() {
   test()  
   thing()
 
-  fmt.
+  fmt.Println("autochdir")
 }
 
 func test() {
