@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/eagledb14/.local/share/nvim/site/pack/packer/start/gruvbox-flat.nvim",
     url = "https://github.com/eddyekofo94/gruvbox-flat.nvim"
   },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/eagledb14/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/eagledb14/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
