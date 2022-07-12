@@ -9,6 +9,7 @@ import (
 func main() {
   fmt.Println("hello world")
   test()  
+  thing()
 }
 
 func test() {
@@ -20,3 +21,4 @@ func test() {
 func thing() {
   fmt.Println("Perfect")
 }
+
