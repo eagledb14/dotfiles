@@ -103,6 +103,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/eagledb14/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
+  },
+  ["vim-airline"] = {
+    loaded = true,
+    path = "/home/eagledb14/.local/share/nvim/site/pack/packer/start/vim-airline",
+    url = "https://github.com/vim-airline/vim-airline"
   }
 }
 

@@ -6,6 +6,7 @@ o.hidden = true
 o.errorbells = false
 o.incsearch = true
 o.scrolloff = 8
+o.showmode = false
 
 -- window
 local w = vim.wo
@@ -32,6 +33,12 @@ vim.cmd[[
       \ pumvisible() ? "\<C-n>" :
       \ CheckBackspace() ? "\<TAB>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+  function! CheckBackspace() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+  endfunction
+
 ]]
 
