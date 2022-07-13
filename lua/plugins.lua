@@ -89,6 +89,7 @@ return packer.startup(function(use)
     requires = {'kyazdani42/nvim-web-devicons'}
   }
 
+  
 
 
   -- Automatically set up your configuration after cloning packer.nvim
