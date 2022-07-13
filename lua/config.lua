@@ -2,7 +2,7 @@
 local o = vim.o
 
 o.hlsearch = true
-o.hidden = true
+--o.hidden = true
 o.errorbells = false
 o.incsearch = true
 o.scrolloff = 8
@@ -61,6 +61,21 @@ vim.cmd[[
   endfunction
 ]]
 
+--window switch
+vim.cmd[[
+  let mapleader = " "
+
+  nnoremap <Leader>j <c-w>j
+  nnoremap <Leader>k <c-w>k
+  nnoremap <Leader>l <c-w>l
+  nnoremap <Leader>h <c-w>h
+
+  nnoremap <Leader>s <c-w>s
+  nnoremap <Leader>v <c-w>v
+  nnoremap <Leader>q <c-w>q
+]]
+
+
 --terminal
 vim.cmd[[
   tnoremap <ESC> <C-\><C-n>
@@ -85,11 +100,11 @@ vim.cmd[[
   tnoremap <A-c> <Cmd>BufferClose<cr>
 
   " Move to previous/next
-  nnoremap <silent>    <A-,> <Cmd>BufferPrevious<CR>
-  nnoremap <silent>    <A-.> <Cmd>BufferNext<CR>
+  nnoremap <silent>    <A-h> <Cmd>BufferPrevious<CR>
+  nnoremap <silent>    <A-l> <Cmd>BufferNext<CR>
   " Re-order to previous/next
-  nnoremap <silent>    <A-<> <Cmd>BufferMovePrevious<CR>
-  nnoremap <silent>    <A->> <Cmd>BufferMoveNext<CR>
+  nnoremap <silent>    <A-,> <Cmd>BufferMovePrevious<CR>
+  nnoremap <silent>    <A-.> <Cmd>BufferMoveNext<CR>
   " Goto buffer in position...
   nnoremap <silent>    <A-1> <Cmd>BufferGoto 1<CR>
   nnoremap <silent>    <A-2> <Cmd>BufferGoto 2<CR>
