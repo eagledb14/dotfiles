@@ -73,6 +73,8 @@ vim.cmd[[
   nnoremap <Leader>s <c-w>s
   nnoremap <Leader>v <c-w>v
   nnoremap <Leader>q <c-w>q
+
+  nnoremap <Leader>r :resize 10<cr>
 ]]
 
 
@@ -132,6 +134,4 @@ vim.cmd[[
   nnoremap <silent> <C-p>    <Cmd>BufferPick<CR>
 
 ]]
-
-
 

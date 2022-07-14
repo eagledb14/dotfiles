@@ -51,7 +51,6 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
-  
   use "p00f/nvim-ts-rainbow"
 
   use {
@@ -90,7 +89,6 @@ return packer.startup(function(use)
   }
 
   
-
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
