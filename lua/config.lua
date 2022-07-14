@@ -27,13 +27,6 @@ o.swapfile = false
 --keybinginds
 --mode lhs rhs
 
---ergo
-vim.cmd[[
-  inoremap jj <ESC>
-  tnoremap jj <Esc>
-]]
-
-
 -- not using arrow keys, helps with muscle memory
 vim.cmd[[
   noremap <Up>    <Nop>
