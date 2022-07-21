@@ -74,7 +74,7 @@ return packer.startup(function(use)
     end
   }
   
-  use {
+ use {
   'kyazdani42/nvim-tree.lua',
   requires = {
     'kyazdani42/nvim-web-devicons', -- optional, for file icons
@@ -89,6 +89,7 @@ return packer.startup(function(use)
         require('nvim-terminal').setup()
     end,
 }
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

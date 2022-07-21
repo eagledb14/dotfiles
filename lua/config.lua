@@ -27,6 +27,7 @@ o.swapfile = false
 --keybinginds
 --mode lhs rhs
 
+
 -- not using arrow keys, helps with muscle memory
 vim.cmd[[
   noremap <Up>    <Nop>
@@ -77,10 +78,9 @@ vim.cmd[[
   nnoremap <Leader>r :resize 10<cr>
 ]]
 
-
 --terminal
 vim.cmd[[
-  tnoremap <ESC> <C-\><C-n>
+  tnoremap <ESC> <C-\><C-n><C-w><c-q>
   let mapleader = " "
   nnoremap <Leader>t :terminal<CR> 
 ]]
@@ -92,5 +92,4 @@ vim.cmd[[
   nnoremap <Leader>c :NvimTreeClose<CR>
   nnoremap <Leader>f :NvimTreeFocus<CR>
 ]]
-
 
