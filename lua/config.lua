@@ -82,7 +82,7 @@ vim.cmd[[
 vim.cmd[[
   tnoremap <ESC> <C-\><C-n><C-w><c-q>
   let mapleader = " "
-  nnoremap <Leader>t :terminal<CR> 
+  nnoremap <Leader>t :terminal<CR>i
 ]]
 
 --nvim tree
