@@ -28,6 +28,10 @@ o.swapfile = false
 --mode lhs rhs
 
 
+vim.cmd[[
+  nnoremap ; :
+]]
+
 -- not using arrow keys, helps with muscle memory
 vim.cmd[[
   noremap <Up>    <Nop>
