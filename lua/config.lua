@@ -29,6 +29,7 @@ o.swapfile = false
 
 
 vim.cmd[[
+  let mapleader = " "
   nnoremap ; :
 ]]
 
@@ -59,6 +60,7 @@ vim.cmd[[
       \ CheckBackspace() ? "\<TAB>" :
       \ coc#refresh()
   inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
   function! CheckBackspace() abort
     let col = col('.') - 1
