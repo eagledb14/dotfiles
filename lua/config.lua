@@ -82,7 +82,7 @@ vim.cmd[[
   nnoremap <Leader>l <c-w>l
   nnoremap <Leader>h <c-w>h
 
-  nnoremap <Leader>s <c-w>s
+  nnoremap <Leader>h <c-w>s
   nnoremap <Leader>v <c-w>v
   nnoremap <Leader>q <c-w>q
 
