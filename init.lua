@@ -1,5 +1,4 @@
 require 'plugins'
 require 'treesitter'
 require 'tree'
-require 'terminal'
 require 'config'
