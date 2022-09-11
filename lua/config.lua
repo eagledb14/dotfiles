@@ -85,8 +85,6 @@ vim.cmd[[
   nnoremap <Leader>s <c-w>s
   nnoremap <Leader>v <c-w>v
   nnoremap <Leader>q <c-w>q
-
-  nnoremap <Leader>r :resize 10<cr>
 ]]
 
 --terminal
@@ -96,11 +94,10 @@ vim.cmd[[
   nnoremap <Leader>t :terminal<CR>
 ]]
 
---nvim tree
+--telescope
 vim.cmd[[
-  let mapleader = " " 
-
-  nnoremap <Leader>c :NvimTreeClose<CR>
-  nnoremap <Leader>f :NvimTreeFocus<CR>
+  nnoremap <leader>ff <cmd>Telescope find_files<cr>
+  nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+  nnoremap <leader>fb <cmd>Telescope buffers<cr>
+  nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 ]]
-
