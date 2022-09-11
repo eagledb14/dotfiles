@@ -82,13 +82,6 @@ return packer.startup(function(use)
   tag = 'nightly' -- optional, updated every week. (see issue #1193)
 }
 
-  use {
-    's1n7ax/nvim-terminal',
-    config = function()
-        vim.o.hidden = true
-        require('nvim-terminal').setup()
-    end,
-}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
