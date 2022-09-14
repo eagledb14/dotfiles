@@ -45,35 +45,45 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
+  --colorscheme
   use 'eddyekofo94/gruvbox-flat.nvim'
 
+  --syntax highlight
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
+  -- bracket pair hightlighting
   use "p00f/nvim-ts-rainbow"
 
+  --auto code showing thing
   use {
     'neoclide/coc.nvim',
     branch = 'release'
   }
 
+  --bracket autopair
+  use {
+    "windwp/nvim-autopairs",
+      config = function() require("nvim-autopairs").setup {} end
+  }
+
+  --bottom status bar
   use 'vim-airline/vim-airline'
   
+  --shows indent lines between levels
   use 'lukas-reineke/indent-blankline.nvim'
 
-  -- Lua
+  --shows hotkey options
   use {
     "folke/which-key.nvim",
     config = function()
       require("which-key").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
       }
     end
   }
   
+  --directory fuzzy finder
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
   -- or                            , branch = '0.1.x',

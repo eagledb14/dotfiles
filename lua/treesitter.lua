@@ -1,4 +1,5 @@
-
+--update: :TSUpdate all
+--install: TSInstall {language}
 require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
