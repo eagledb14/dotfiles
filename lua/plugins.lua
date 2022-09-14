@@ -56,6 +56,7 @@ return packer.startup(function(use)
   -- bracket pair hightlighting
   use "p00f/nvim-ts-rainbow"
 
+  use {'neoclide/coc.nvim', branch = 'release'}
 
   --bracket autopair
   use {
