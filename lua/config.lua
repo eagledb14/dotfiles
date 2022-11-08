@@ -48,7 +48,7 @@ vim.cmd[[
 
 -- colorscheme
 vim.cmd[[
-  colorscheme gruvbox-flat
+  colorscheme tokyonight-moon
   hi Normal guibg=NONE ctermbg=NONE
 ]]
 

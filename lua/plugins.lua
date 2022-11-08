@@ -46,7 +46,8 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
   --colorscheme
-  use 'eddyekofo94/gruvbox-flat.nvim'
+  --use 'eddyekofo94/gruvbox-flat.nvim'
+  use 'folke/tokyonight.nvim'
 
   --syntax highlight
   use {
