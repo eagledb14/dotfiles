@@ -43,6 +43,13 @@ vim.cmd[[
   inoremap <Down>  <Nop>
   inoremap <Left>  <Nop>
   inoremap <Right> <Nop>
+
+  inoremap <S-Up> <Nop>
+  inoremap <S-Down> <Nop>
+  
+  noremap <S-Up> <Nop>
+  noremap <S-Down> <Nop>
+
 ]]
 
 
