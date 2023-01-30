@@ -52,7 +52,7 @@ return packer.startup(function(use)
   --syntax highlight
   use {
     "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
+    --run = ":TSUpdate",
   }
   -- bracket pair hightlighting
   use "p00f/nvim-ts-rainbow"
