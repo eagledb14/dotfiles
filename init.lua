@@ -121,7 +121,7 @@ w.relativenumber = true
 w.nu = true
 
 --buffer
-local b = vim.bo
+local o = vim.o
 
 o.tabstop = 2
 o.softtabstop = 2
