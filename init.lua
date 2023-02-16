@@ -40,6 +40,12 @@ require('packer').startup(function(use)
     end
   }
 
+  --auto bracket pair
+  use {
+	"windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
+
   use { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     run = function()
@@ -77,7 +83,7 @@ require('packer').startup(function(use)
 
   if is_bootstrap then
     require('packer').sync()
-  end
+   end
 end)
 
 -- When we are bootstrapping a configuration, it doesn't
@@ -447,6 +453,13 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+
+--allows autopairs to work with nvim.cmp
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+cmp.event:on(
+  'confirm_done',
+  cmp_autopairs.on_confirm_done()
+)
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
