@@ -9,28 +9,33 @@ source ~/Documents/ble.sh/out/ble.sh --noattach
 
 export PS1="\[$(tput bold)\]\[\033[38;5;129m\]\u\[$(tput sgr0)\]@\h \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;129m\]\W\[$(tput sgr0)\] \$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')> \[$(tput sgr0)\]"
 
-export PATH=$PATH:"~/.nix-profile/bin:~/.cargo/bin"
-export NIXPKGS_ALLOW_UNFREE=1
+# new paths
+export PATH=/home/eagledb14/.cargo/bin:$PATH
 
 # aliases
-
+alias torify='torsocks'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias la='ls -A'
 alias vi='nvim'
 
+
 #functions
-## nx keyword and simpler api, update as needed
-nx () {
-  if [[ $1 == "-i" ]]; then
-    nix-env -iA "nixpkgs.${2}"
-    ln -s /home/$USER/.nix-profile/share/applications/* /home/$USER/.local/share/applications/ 2>&- 
-    return 1
-  elif [[ $1 == "-e" ]]; then
-    file=$(ls ~/.local/share/applications | grep ${2} 2>&-)
-    rm ~/.local/share/applications/${file}
-  fi
-  nix-env ${1} ${2}
+#go to class folder
+function class {
+  cd ~/Sync/classes
+}
+
+#split tmux and start a coding session
+function edit {
+  tmux new-session -d
+  tmux split-window -h -p 75
+  tmux attach-session
+}
+
+# go to project folder
+function proj {
+  cd ~/Sync/projects
 }
 
 
