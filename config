@@ -217,8 +217,8 @@ exec_always xrandr --output DisplayPort-0 --off --output DisplayPort-1 --primary
 
 #custom startup appli#cations
 exec syncthing
-exec keepassxc
-assign [class = KeePassXC] $ws2
+#exec keepassxc
+#assign [class = KeePassXC] $ws10
 
 
 #custom keybinds
