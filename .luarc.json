@@ -1,0 +1,29 @@
+{
+    "workspace.library": [
+        "/home/eagledb14/.local/share/nvim/site/pack/packer/start/neodev.nvim/types/stable",
+        "/usr/share/nvim/runtime/lua",
+        "/home/eagledb14/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-textobjects/lua",
+        "/home/eagledb14/.local/share/nvim/site/pack/packer/opt/telescope-fzf-native.nvim/lua",
+        "/home/eagledb14/.local/share/nvim/site/pack/packer/start/Comment.nvim/lua",
+        "/home/eagledb14/.local/share/nvim/site/pack/packer/start/LuaSnip/lua",
+        "/home/eagledb14/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp/lua",
+        "/home/eagledb14/.local/share/nvim/site/pack/packer/start/cmp_luasnip/lua",
+        "/home/eagledb14/.local/share/nvim/site/pack/packer/start/fidget.nvim/lua",
+        "/home/eagledb14/.local/share/nvim/site/pack/packer/start/gitsigns.nvim/lua",
+        "/home/eagledb14/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim/lua",
+        "/home/eagledb14/.local/share/nvim/site/pack/packer/start/lualine.nvim/lua",
+        "/home/eagledb14/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim/lua",
+        "/home/eagledb14/.local/share/nvim/site/pack/packer/start/mason.nvim/lua",
+        "/home/eagledb14/.local/share/nvim/site/pack/packer/start/neodev.nvim/lua",
+        "/home/eagledb14/.local/share/nvim/site/pack/packer/start/nvim-autopairs/lua",
+        "/home/eagledb14/.local/share/nvim/site/pack/packer/start/nvim-cmp/lua",
+        "/home/eagledb14/.local/share/nvim/site/pack/packer/start/nvim-lspconfig/lua",
+        "/home/eagledb14/.local/share/nvim/site/pack/packer/start/nvim-treesitter/lua",
+        "/home/eagledb14/.local/share/nvim/site/pack/packer/start/onedark.nvim/lua",
+        "/home/eagledb14/.local/share/nvim/site/pack/packer/start/packer.nvim/lua",
+        "/home/eagledb14/.local/share/nvim/site/pack/packer/start/plenary.nvim/lua",
+        "/home/eagledb14/.local/share/nvim/site/pack/packer/start/telescope.nvim/lua",
+        "/home/eagledb14/.local/share/nvim/site/pack/packer/start/which-key.nvim/lua",
+        "${3rd}/luv/library"
+    ]
+}
