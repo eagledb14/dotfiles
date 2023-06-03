@@ -5,10 +5,9 @@
 cd
 
 # create directories
-mkdir ~/documents
-mkdir ~/Downloads
-mkdir ~/.config
-
+mkdir ~/documents > /dev/null 2>&1
+mkdir ~/Downloads > /dev/null 2>&1
+mkdir ~/.config > /dev/null 2>&1
 
 # upating before install
 sudo pacman -Syy --noconfirm > /dev/null 2>&1
@@ -63,9 +62,9 @@ cd
 
 # removing unwanted packages that were probably added during install
 REMOVE_PKGS=(
-  "xfce4"
   "lightdm"
   "wayland"
+  "xfce4"
 )
 
 for PKG in "${REMOVE_PKGS[@]}"; do
@@ -76,56 +75,56 @@ done
 
 # installing other needed packages
 PKGS=(
-  "firefox"
-  "brave-bin"
-  "sx"
-  "i3-wm"
-  "dmenu"
-  "feh"
-  "mesa"
-  "htop"
-  "kmonad"
-  "openssh"
-  "curl"
-  "cairo"
-  "lxappearance-gtk3"
-  "monero-gui"
-  "mullvad-vpn-bin"
-  "bluetuith"
-  "steam"
-  "neovim"
   "alacritty"
-  "syncthing-bin"
-  "pop-icon-theme-git"
-  "pop-gtk-theme-git"
-  "obsidian-appimage"
-  "rustup"
-  "gnome-boxes"
-  "keepassxc"
-  "evince"
-  "tmux"
-  "neofetch"
-  "discord"
-  "lutris"
-  "wine"
-  "zip"
-  "unzip"
-  "gnome-disk-utility"
-  "gnome-calculator"
-  "npm"
-  "timeshift-bin"
-  "libreoffice-fresh"
-  "sublime-text-4"
-  "man-db"
-  "man-pages"
-  "thunar"
-  "pulseaudio"
-  "pulseaudio-bluetooth"
-  "pulseaudio-also"
+  "arandr"
+  "bluetuith"
   "bluez"
   "bluez-libs"
-  "arandr"
+  "brave-bin"
+  "cairo"
+  "curl"
+  "discord"
+  "dmenu"
+  "evince"
+  "feh"
+  "firefox"
+  "gnome-boxes"
+  "gnome-calculator"
+  "gnome-disk-utility"
+  "htop"
+  "i3-wm"
+  "keepassxc"
+  "kmonad"
+  "libreoffice-fresh"
+  "lutris"
+  "lxappearance-gtk3"
+  "man-db"
+  "man-pages"
+  "mesa"
+  "monero-gui"
+  "mullvad-vpn-bin"
+  "neofetch"
+  "neovim"
   "networkmanager"
+  "npm"
+  "obsidian-appimage"
+  "openssh"
+  "pop-gtk-theme-git"
+  "pop-icon-theme-git"
+  "pulseaudio"
+  "pulseaudio-also"
+  "pulseaudio-bluetooth"
+  "rustup"
+  "steam"
+  "sublime-text-4"
+  "sx"
+  "syncthing-bin"
+  "thunar"
+  "timeshift-bin"
+  "tmux"
+  "unzip"
+  "wine"
+  "zip"
 )
 
 for PKG in "${PKGS[@]}"; do
