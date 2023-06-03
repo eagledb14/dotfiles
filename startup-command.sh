@@ -96,7 +96,7 @@ PKGS=(
   "steam"
   "neovim"
   "alacritty"
-  "syncthing"
+  "syncthing-bin"
   "pop-icon-theme-git"
   "pop-gtk-theme-git"
   "obsidian-appimage"
@@ -126,6 +126,7 @@ PKGS=(
   "bluez"
   "bluez-libs"
   "arandr"
+  "networkmanager"
 )
 
 for PKG in "${PKGS[@]}"; do
@@ -134,7 +135,12 @@ for PKG in "${PKGS[@]}"; do
 done
 
 
+#miscelanious extras
+echo CLEANING UP
 yay -Rcns go > /dev/null 2>&1
 sudo rm -rf ~/go > /dev/null 2>&1
+
+
+rustup default stable > /dev/null 2>&1
 
 sudo reboot now
