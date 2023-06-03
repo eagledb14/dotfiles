@@ -167,6 +167,39 @@ vim.keymap.set({'n', 'i'}, '<Right>', '<Nop>', {})
 vim.keymap.set({'n', 'i'}, '<S-Up>', '<Nop>', {})
 vim.keymap.set({'n', 'i'}, '<S-Down>', '<Nop>', {})
 
+--terminal
+vim.keymap.set('t', '<ESC>', '<C-\\><C-n>', {silent = true, noremap = true})
+vim.keymap.set('t', '<C-w>', '<C-\\><C-n><C-w>', {silent = true, noremap = true})
+
+--toggle terminal mode
+vim.keymap.set('n', '<leader>t', ':lua toggle_terminal()<Enter>', {noremap = true, silent = true});
+-- vim.keymap.set('t', '<C-w>t', '<C-\\><C-n>:lua toggle_terminal()<Enter>', {noremap = true, silent = true});
+
+
+
+-- toggle terminal functions
+-- local toggle_terminal = function() 
+function toggle_terminal()
+  local ok, result = pcall(vim.cmd, 'bd! term')
+  
+  if not ok then
+    vim.cmd('vsplit')
+    vim.cmd('term')
+    vim.cmd('vertical resize 50')
+    vim.cmd('wincmd p')
+  end
+
+  -- vim.cmd('echo "'..success..'"')
+end
+
+--vim.keymap.set('n', '<leader>t', toggle_terminal());
+
+--always enter insert mode when entering a terminal
+vim.cmd[[
+  :au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+]];
+
+
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -331,7 +364,7 @@ local on_attach = function(_, bufnr)
     vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
   end
 
-  nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+  nmap('<leader>rn', vim.lsp.buf.rennme, '[R]e[n]ame')
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
   nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
@@ -366,19 +399,11 @@ end
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
   clangd = {},
-  -- gopls = {},
   pyright = {},
   rust_analyzer = {},
   tsserver = {},
   jdtls = {},
   --kotlin-language-server = {},
-
---sumneko_lua = {
---  Lua = {
---    workspace = { checkThirdParty = false },
---    telemetry = { enable = false },
---  },
---},
 }
 
 -- Setup neovim lua configuration
