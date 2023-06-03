@@ -13,7 +13,7 @@ mkdir ~/.config > /dev/null 2>&1
 sudo pacman -Syy --noconfirm > /dev/null 2>&1
 
 #welcoming the user
-echo -e "\e[1mWelcome to:\e[1m"
+echo "Welcome to:"
 cat << "EOF"
      _     _ _        _    _              
   _ | |___| | |_  _  | |  (_)_ _ _  ___ __
