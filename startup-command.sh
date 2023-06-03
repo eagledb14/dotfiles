@@ -4,7 +4,6 @@
 # starting in home directory
 cd
 
-
 # create directories
 mkdir ~/documents
 mkdir ~/Downloads
@@ -137,10 +136,12 @@ done
 
 #miscelanious extras
 echo CLEANING UP
-yay -Rcns go > /dev/null 2>&1
-sudo rm -rf ~/go > /dev/null 2>&1
-
+yay -Rcns go > --noconfirm /dev/null 2>&1
+rm -rf ~/go > /dev/null 2>&1
 
 rustup default stable > /dev/null 2>&1
 
+
+echo "Done!"
+sleep(3)
 sudo reboot now
