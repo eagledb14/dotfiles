@@ -1,5 +1,5 @@
 # to use on cli, use curl from
-# https://raw.githubusercontent.com/eagledb14/dotfiles/main/startup-command.sh
+# https://raw.githubusercontent.com/eagledb14/dotfiles/main/setup.sh
 
 # starting in home directory
 cd
@@ -11,6 +11,17 @@ mkdir ~/.config > /dev/null 2>&1
 
 # upating before install
 sudo pacman -Syy --noconfirm > /dev/null 2>&1
+
+#welcoming the user
+echo -e "\e[1mWelcome to:\e[1m"
+cat << "EOF"
+     _     _ _        _    _              
+  _ | |___| | |_  _  | |  (_)_ _ _  ___ __
+ | || / -_) | | || | | |__| | ' \ || \ \ /
+  \__/\___|_|_|\_, | |____|_|_||_\_,_/_\_\
+               |__/
+EOF
+
 
 #downloading git
 echo "INSTALLING: git"
@@ -71,7 +82,6 @@ for PKG in "${REMOVE_PKGS[@]}"; do
     echo "REMOVING: ${PKG}"
     yay -Rcns "$PKG" --noconfirm > /dev/null 2>&1
 done
-
 
 # installing other needed packages
 PKGS=(
