@@ -152,5 +152,5 @@ rustup default stable > /dev/null 2>&1
 
 
 echo "Done!"
-sleep(3)
+sleep 3
 sudo reboot now
