@@ -121,7 +121,6 @@ PKGS=(
   "gnome-disk-utility"
   "gnome-calculator"
   "npm"
-  "node"
   "timeshift-bin"
   "libreoffice-fresh"
   "sublime-text-4"
