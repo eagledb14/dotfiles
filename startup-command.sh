@@ -1,16 +1,8 @@
 # to use on cli, use curl from
 # https://raw.githubusercontent.com/eagledb14/dotfiles/main/startup-command.sh
 
-
 # starting in home directory
 cd
-
-# getting passwords and stuff before isntall
-# echo git username
-# read git_username
-#
-# echo git password
-# read -s git_password
 
 
 # create directories
@@ -24,7 +16,7 @@ sudo pacman -Syy --noconfirm > /dev/null 2>&1
 
 #downloading git
 echo "INSTALLING: git"
-sudo pacman -S git --noconfirm
+sudo pacman -S git --noconfirm > /dev/null 2>&1
 
 # download yay
 echo "DOWNLOADING: yay"
@@ -40,9 +32,6 @@ cd ../
 rm -rf ./yay-git
 cd
 
-yay -Rcns go > /dev/null 2&>1
-sudo rm -rf ~/go
-
 # install dotfiles
 echo "INSTALLING: dotfiles"
 cd ~/.config
@@ -51,7 +40,6 @@ git clone https://github.com/eagledb14/dotfiles.git > /dev/null 2>&1
 
 cd ./dotfiles
 ln -r -s -f ./* ~/.config/
-# rm ../.bashrc
 ln -r -s -f .bashrc ~/
 
 cd
@@ -83,7 +71,7 @@ REMOVE_PKGS=(
 
 for PKG in "${REMOVE_PKGS[@]}"; do
     echo "REMOVING: ${PKG}"
-    yay -Rcns "$PKG" --noconfirm  2> /dev/null > /dev/null
+    yay -Rcns "$PKG" --noconfirm > /dev/null 2>&1
 done
 
 
@@ -137,12 +125,16 @@ PKGS=(
   "pulseaudio-also"
   "bluez"
   "bluez-libs"
+  "arandr"
 )
 
 for PKG in "${PKGS[@]}"; do
     echo "INSTALLING: ${PKG}"
-    yay -S "$PKG" --noconfirm --needed > /dev/null 2> /dev/null
+    yay -S "$PKG" --noconfirm --needed > /dev/null 2>&1
 done
 
+
+yay -Rcns go > /dev/null 2>&1
+sudo rm -rf ~/go > /dev/null 2>&1
 
 sudo reboot now
