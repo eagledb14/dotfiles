@@ -62,6 +62,7 @@ cd ../
 rm -rf ble.sh
 
 cd
+rm -rf ~/go
 
 # installing wallpapers
 cd ~/.config
@@ -70,20 +71,20 @@ git clone https://github.com/eagledb14/wallpapers.git
 cd
 
 # removing unwanted packages that were probably added during install
-REMOVE_PKGS = (
+REMOVE_PKGS=(
   "xfce4"
   "lightdm"
   "wayland"
 )
 
 for PKG in "${REMOVE_PKGS[@]}"; do
-    echo "INSTALLING: ${PKG}"
-    yay -Rcns "$PKG" --noconfirm --needed
+    echo "REMOVING: ${PKG}"
+    yay -Rcns "$PKG" --noconfirm --needed > /dev/null
 done
 
 
 # installing other needed packages
-PKGS = (
+PKGS=(
   "firefox"
   "brave-bin"
   "sx"
@@ -105,7 +106,7 @@ PKGS = (
   "alacritty"
   "syncthing"
   "pop-icon-theme-git"
-  "pop-gkt-theme-git"
+  "pop-gtk-theme-git"
   "obsidian-appimage"
   "rustup"
   "gnome-boxes"
@@ -126,11 +127,12 @@ PKGS = (
   "sublime-text-4"
   "man-db"
   "man-pages"
+  "thunar"
 )
 
 for PKG in "${PKGS[@]}"; do
     echo "INSTALLING: ${PKG}"
-    yay -S "$PKG" --noconfirm --needed
+    yay -S "$PKG" --noconfirm --needed > /dev/null
 done
 
 
