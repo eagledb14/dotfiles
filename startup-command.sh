@@ -72,7 +72,7 @@ REMOVE_PKGS=(
 
 for PKG in "${REMOVE_PKGS[@]}"; do
     echo "REMOVING: ${PKG}"
-    yay -Rcns "$PKG" --noconfirm  > /dev/null
+    yay -Rcns "$PKG" --noconfirm  2> /dev/null > /dev/null
 done
 
 
@@ -124,7 +124,7 @@ PKGS=(
 
 for PKG in "${PKGS[@]}"; do
     echo "INSTALLING: ${PKG}"
-    yay -S "$PKG" --noconfirm --needed > /dev/null
+    yay -S "$PKG" --noconfirm --needed > /dev/null 2> /dev/null
 done
 
 
