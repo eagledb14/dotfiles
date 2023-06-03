@@ -18,6 +18,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias la='ls -A'
 alias vi='nvim'
+alias sx='sx i3'
 
 
 #functions
