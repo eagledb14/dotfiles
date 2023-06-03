@@ -20,7 +20,7 @@ mkdir ~/.config
 
 
 # upating before install
-sudo pacman -Syy --noconfirm
+sudo pacman -Syy --noconfirm > /dev/null 2>&1
 
 #downloading git
 echo "INSTALLING: git"
@@ -40,6 +40,7 @@ cd ../
 rm -rf ./yay-git
 cd
 
+yay -Rcns go > /dev/null 2&>1
 sudo rm -rf ~/go
 
 # install dotfiles
@@ -50,7 +51,7 @@ git clone https://github.com/eagledb14/dotfiles.git > /dev/null 2>&1
 
 cd ./dotfiles
 ln -r -s -f ./* ~/.config/
-rm ../.bashrc
+# rm ../.bashrc
 ln -r -s -f .bashrc ~/
 
 cd
@@ -68,7 +69,7 @@ cd
 
 # installing wallpapers
 cd ~/.config
-echo "DOWNLOADING WALLPAPERS"
+echo "DOWNLOADING: Wallpapers"
 git clone https://github.com/eagledb14/wallpapers.git > /dev/null 2>&1
 
 cd
@@ -131,6 +132,11 @@ PKGS=(
   "man-db"
   "man-pages"
   "thunar"
+  "pulseaudio"
+  "pulseaudio-bluetooth"
+  "pulseaudio-also"
+  "bluez"
+  "bluez-libs"
 )
 
 for PKG in "${PKGS[@]}"; do
