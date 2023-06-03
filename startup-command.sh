@@ -115,6 +115,7 @@ PKGS=(
   "gnome-boxes"
   "keepassxc"
   "evince"
+  "tmux"
   "neofetch"
   "discord"
   "lutris"
