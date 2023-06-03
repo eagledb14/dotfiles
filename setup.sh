@@ -151,6 +151,7 @@ sudo rm -rf ~/go > /dev/null 2>&1
 
 rustup default stable > /dev/null 2>&1
 
+rm -- "$0"
 
 echo "Done!"
 sleep 3
