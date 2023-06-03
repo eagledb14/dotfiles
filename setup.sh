@@ -145,7 +145,7 @@ done
 
 #miscelanious extras
 echo CLEANING UP
-yay -Rcns go > --noconfirm /dev/null 2>&1
+yay -Rcns go --noconfirm > /dev/null 2>&1
 rm -rf ~/go > /dev/null 2>&1
 
 rustup default stable > /dev/null 2>&1
