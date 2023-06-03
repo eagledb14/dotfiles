@@ -1,3 +1,7 @@
+# to use on cli, use curl from
+# https://raw.githubusercontent.com/eagledb14/dotfiles/main/startup-command.sh
+
+
 # starting in home directory
 cd
 
