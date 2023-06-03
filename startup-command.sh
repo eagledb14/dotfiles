@@ -15,7 +15,7 @@ mkdir ~/Downloads
 
 
 # upating before install
-pacman -Syy --noconfirm
+sudo pacman -Syy --noconfirm
 
 #downloading git
 sudo pacman -S git --noconfirm
@@ -24,7 +24,6 @@ sudo pacman -S git --noconfirm
 cd ~/Downloads
 sudo git clone https://aur.archlinux.org/yay-git.git
 
-user = "$USER"
 sudo chown -R $USER:$USER ./yay-git
 cd yay-git
 makepkg -si --noconfirm
@@ -33,6 +32,7 @@ cd ../
 rm -rf ./yay-git
 cd
 
+sudo rm -rf ~/go
 
 # install dotfiles
 cd ~/.config
@@ -62,7 +62,6 @@ cd ../
 rm -rf ble.sh
 
 cd
-rm -rf ~/go
 
 # installing wallpapers
 cd ~/.config
@@ -79,7 +78,7 @@ REMOVE_PKGS=(
 
 for PKG in "${REMOVE_PKGS[@]}"; do
     echo "REMOVING: ${PKG}"
-    yay -Rcns "$PKG" --noconfirm --needed > /dev/null
+    yay -Rcns "$PKG" --noconfirm  > /dev/null
 done
 
 
@@ -135,4 +134,4 @@ for PKG in "${PKGS[@]}"; do
 done
 
 
-reboot now
+sudo reboot now
