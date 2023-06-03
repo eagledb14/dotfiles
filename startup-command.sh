@@ -23,15 +23,18 @@ mkdir ~/.config
 sudo pacman -Syy --noconfirm
 
 #downloading git
+echo "INSTALLING: git"
 sudo pacman -S git --noconfirm
 
 # download yay
+echo "DOWNLOADING: yay"
 cd ~/Downloads
-sudo git clone https://aur.archlinux.org/yay-git.git
+sudo git clone https://aur.archlinux.org/yay-git.git > /dev/null 2>&1
 
 sudo chown -R $USER:$USER ./yay-git
 cd yay-git
-makepkg -si --noconfirm
+echo "INSTALLING: yay"
+makepkg -si --noconfirm > /dev/null 2>&1
 
 cd ../
 rm -rf ./yay-git
@@ -40,9 +43,10 @@ cd
 sudo rm -rf ~/go
 
 # install dotfiles
+echo "INSTALLING: dotfiles"
 cd ~/.config
 
-git clone https://github.com/eagledb14/dotfiles.git
+git clone https://github.com/eagledb14/dotfiles.git > /dev/null 2>&1
 
 cd ./dotfiles
 ln -r -s -f ./* ~/.config/
@@ -52,10 +56,11 @@ ln -r -s -f .bashrc ~/
 cd
 
 # installing ble.sh
+echo "INSTALLING: ble.sh"
 cd ~/documents
-git clone --recursive https://github.com/akinomyoga/ble.sh.git
+git clone --recursive https://github.com/akinomyoga/ble.sh.git > /dev/null 2>&1
 cd ble.sh
-make install
+make install > /dev/null 2>&1
 cd ../
 rm -rf ble.sh
 
@@ -63,7 +68,8 @@ cd
 
 # installing wallpapers
 cd ~/.config
-git clone https://github.com/eagledb14/wallpapers.git
+echo "DOWNLOADING WALLPAPERS"
+git clone https://github.com/eagledb14/wallpapers.git > /dev/null 2>&1
 
 cd
 
