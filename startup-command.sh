@@ -53,7 +53,6 @@ ln -r -s -f .bashrc ~/
 
 cd
 
-
 # installing ble.sh
 cd ~/documents
 git clone --recursive https://github.com/akinomyoga/ble.sh.git
@@ -61,6 +60,14 @@ cd ble.sh
 make install
 cd ../
 rm -rf ble.sh
+
+cd
+
+# installing wallpapers
+cd ~/.config
+git clone https://github.com/eagledb14/wallpapers.git
+
+cd
 
 # removing unwanted packages that were probably added during install
 REMOVE_PKGS = (
@@ -80,8 +87,15 @@ PKGS = (
   "firefox"
   "brave-bin"
   "sx"
-  "i3"
+  "i3-wm"
+  "dmenu"
   "feh"
+  "mesa"
+  "htop"
+  "kmonad"
+  "openssh"
+  "curl"
+  "cairo"
   "lxappearance-gtk3"
   "monero-gui"
   "mullvad-vpn-bin"
@@ -110,6 +124,8 @@ PKGS = (
   "timeshift-bin"
   "libreoffice-fresh"
   "sublime-text-4"
+  "man-db"
+  "man-pages"
 )
 
 for PKG in "${PKGS[@]}"; do

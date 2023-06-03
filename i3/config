@@ -204,7 +204,8 @@ smart_gaps inverse_outer
 
 #custom start commands
 ##wallpaper
-exec_always feh --bg-scale ~/sync/.wallpaper/Landscape.png
+# exec_always feh --bg-scale ~/sync/.wallpaper/Landscape.png
+exec_always feh --bg-scale ~/.config/wallpapers/anime-sunset-landscape.png
 
 #exec xset s off
 #output "*" bg ~/sync/.wallpaper/Landscape.png fill
