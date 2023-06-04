@@ -16,7 +16,7 @@ mkdir ~/Downloads > /dev/null 2>&1
 mkdir ~/.config > /dev/null 2>&1
 
 # upating before install
-echo "\nUPDATING COMPUTER"
+echo -e "\nUPDATING COMPUTER"
 sudo pacman -Syy --noconfirm > /dev/null 2>&1
 
 #welcoming the user
@@ -78,7 +78,7 @@ cd
 
 # installing wallpapers
 cd ~/.config
-echo "DOWNLOADING: Wallpapers\n"
+echo -e "DOWNLOADING: Wallpapers\n"
 git clone https://github.com/eagledb14/wallpapers.git > /dev/null 2>&1
 
 cd
@@ -95,7 +95,7 @@ for PKG in "${REMOVE_PKGS[@]}"; do
     yay -Rcns "$PKG" --noconfirm > /dev/null 2>&1
 done
 
-echo "\n"
+echo -e "\n"
 
 # installing other needed packages
 PKGS=(
@@ -162,6 +162,7 @@ for PKG in "${PKGS[@]}"; do
     yay -S "$PKG" --noconfirm --needed > /dev/null 2>&1
 done
 
+echo -e "\n"
 
 #miscelanious extras
 echo CLEANING UP
