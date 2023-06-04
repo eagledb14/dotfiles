@@ -221,6 +221,6 @@ exec syncthing
 #exec keepassxc
 #assign [class = KeePassXC] $ws10
 
-
 #custom keybinds
-
+# bindsym XF86MonBrightnessUp exec brightnessctl set +15%
+# bindsym XF86MonBrightnessDown exec brightnessctl set 15%-

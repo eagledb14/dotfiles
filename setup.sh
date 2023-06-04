@@ -92,6 +92,7 @@ PKGS=(
   "bluez"
   "bluez-libs"
   "brave-bin"
+  "brightness-ctl"
   "cairo"
   "curl"
   "discord"
