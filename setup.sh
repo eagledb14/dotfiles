@@ -16,7 +16,7 @@ mkdir ~/Downloads > /dev/null 2>&1
 mkdir ~/.config > /dev/null 2>&1
 
 # upating before install
-echo "UPDATING COMPUTER"
+echo "\nUPDATING COMPUTER"
 sudo pacman -Syy --noconfirm > /dev/null 2>&1
 
 #welcoming the user
