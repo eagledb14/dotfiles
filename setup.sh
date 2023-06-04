@@ -1,6 +1,14 @@
 # to use on cli, use curl from
 # https://raw.githubusercontent.com/eagledb14/dotfiles/main/setup.sh
 
+
+# getting git setup options
+echo "Enter git username"
+read git_username
+
+echo "Enter git email"
+read git_email
+
 # starting in home directory
 cd
 
@@ -27,6 +35,10 @@ EOF
 #downloading git
 echo "INSTALLING: git"
 sudo pacman -S git --noconfirm > /dev/null 2>&1
+
+git config --global user.name $git_username
+git config --global user.email $git_email
+git config --glocal core.editor nvim
 
 # download yay
 echo "DOWNLOADING: yay"
