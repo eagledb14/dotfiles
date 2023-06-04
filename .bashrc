@@ -12,6 +12,8 @@ export PS1="\[$(tput bold)\]\[\033[38;5;129m\]\u\[$(tput sgr0)\]@\h \[$(tput sgr
 # new paths
 export PATH=/home/eagledb14/.cargo/bin:$PATH
 
+set -o vi
+
 # aliases
 alias torify='torsocks'
 alias ls='ls --color=auto'
