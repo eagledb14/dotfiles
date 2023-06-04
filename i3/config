@@ -204,14 +204,10 @@ smart_gaps inverse_outer
 
 #custom start commands
 ##wallpaper
-# exec_always feh --bg-scale ~/sync/.wallpaper/Landscape.png
-exec_always feh --bg-scale ~/.config/wallpapers/anime-sunset-landscape.png fill
+# exec_always feh --bg-scale ~/.config/wallpapers/anime-sunset-landscape.png fill
+exec ~/.config/i3/autopaper.sh ~/.config/wallpapers/ 3600
 
 #exec xset s off
-#output "*" bg ~/sync/.wallpaper/Landscape.png fill
-## change default starting spot for second monitor
-#$ws6 output DisplayPort-2
-#workspace $ws6 output HDMI-A-0
 
 ##monitor settings
 exec_always xrandr --output DisplayPort-0 --off --output DisplayPort-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DisplayPort-2 --off --output HDMI-A-0 --mode 1920x1080 --pos 1920x0 --rotate normal
