@@ -3,9 +3,9 @@
 
 
 # getting git setup options
-read -p "Enter git-username" git_username
+read -p "Enter git-username: " git_username
 
-read -p "Enter git-email" git_email
+read -p "Enter git-email: " git_email
 
 # starting in home directory
 cd
