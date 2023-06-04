@@ -3,11 +3,9 @@
 
 
 # getting git setup options
-echo "Enter git username"
-read git_username
+read -p "Enter git-username" git_username
 
-echo "Enter git email"
-read git_email
+read -p "Enter git-email" git_email
 
 # starting in home directory
 cd
@@ -38,7 +36,7 @@ sudo pacman -S git --noconfirm > /dev/null 2>&1
 
 git config --global user.name $git_username
 git config --global user.email $git_email
-git config --glocal core.editor nvim
+git config --global core.editor nvim
 
 # download yay
 echo "DOWNLOADING: yay"
