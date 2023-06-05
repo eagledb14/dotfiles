@@ -204,7 +204,7 @@ smart_gaps inverse_outer
 
 #custom start commands
 ##wallpaper
-exec ~/.config/i3/autopaper.sh ~/.config/wallpapers/ 3600
+exec ~/.config/i3/autopaper.sh ~/.config/wallpapers/ 1800
 
 #exec xset s off
 
