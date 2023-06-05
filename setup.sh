@@ -100,6 +100,7 @@ echo -e "\n"
 # installing other needed packages
 PKGS=(
   "alacritty"
+  "amdvlk"
   "arandr"
   "bluetuith"
   "bluez"
@@ -121,13 +122,11 @@ PKGS=(
   "keepassxc"
   "kmonad"
   "libreoffice-fresh"
-  "libva-mesa-driver"
   "lutris"
   "lxappearance-gtk3"
   "man-db"
   "man-pages"
   "mesa"
-  "mesa-vdpau"
   "monero-gui"
   "mullvad-vpn-bin"
   "neofetch"
@@ -150,10 +149,8 @@ PKGS=(
   "timeshift-bin"
   "tmux"
   "unzip"
-  "vulcan-radeon"
   "wine"
   "xf86-video-amdgpu"
-  "xf86-video-vesa"
   "zip"
 )
 
