@@ -123,7 +123,6 @@ PKGS=(
   "kmonad"
   "libreoffice-fresh"
   "lutris"
-  "lxappearance-gtk3"
   "man-db"
   "man-pages"
   "mesa"
