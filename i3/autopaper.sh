@@ -37,6 +37,11 @@ do
   rand=$((RANDOM % ($num_photos)))
   feh --bg-scale ${photos[$rand]} &
   pkill feh
+
+  if [ $? -ne 0 ]; then 
+    continue
+  fi
+
   sleep $wait_time
 done
 
