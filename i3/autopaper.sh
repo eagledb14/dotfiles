@@ -31,6 +31,7 @@ do
 done
 
 num_photos=${#photos[@]}
+sleep 5
 
 while true
 do
