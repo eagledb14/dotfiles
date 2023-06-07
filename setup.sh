@@ -148,6 +148,7 @@ PKGS=(
   "timeshift-bin"
   "tmux"
   "unzip"
+  "vlc"
   "wine"
   "xf86-video-amdgpu"
   "zip"
