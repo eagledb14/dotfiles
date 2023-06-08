@@ -4,7 +4,6 @@
 
 # getting git setup options
 read -p "Enter git-username: " git_username
-
 read -p "Enter git-email: " git_email
 
 # starting in home directory
@@ -139,6 +138,7 @@ PKGS=(
   "pulseaudio"
   "pulseaudio-also"
   "pulseaudio-bluetooth"
+  "qbittorrent"
   "rustup"
   "steam"
   "sublime-text-4"
@@ -151,6 +151,7 @@ PKGS=(
   "vlc"
   "wine"
   "xf86-video-amdgpu"
+  "xfce4-screenshooter"
   "zip"
 )
 
