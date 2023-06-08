@@ -99,7 +99,6 @@ echo -e "\n"
 # installing other needed packages
 PKGS=(
   "alacritty"
-  "amdvlk"
   "arandr"
   "bluetuith"
   "bluez"
@@ -124,7 +123,6 @@ PKGS=(
   "lutris"
   "man-db"
   "man-pages"
-  "mesa"
   "monero-gui"
   "mullvad-vpn-bin"
   "neofetch"
@@ -150,7 +148,6 @@ PKGS=(
   "unzip"
   "vlc"
   "wine"
-  "xf86-video-amdgpu"
   "xfce4-screenshooter"
   "zip"
 )
