@@ -1,3 +1,4 @@
+#!/bin/bash
 # to use on cli, use curl from
 # https://raw.githubusercontent.com/eagledb14/dotfiles/main/setup.sh
 
@@ -105,7 +106,6 @@ PKGS=(
   "bluez-libs"
   "brave-bin"
   "brightness-ctl"
-  "cairo"
   "curl"
   "discord"
   "dmenu"
@@ -123,6 +123,7 @@ PKGS=(
   "lutris"
   "man-db"
   "man-pages"
+  "mictray"
   "monero-gui"
   "mullvad-vpn-bin"
   "neofetch"
