@@ -123,7 +123,6 @@ PKGS=(
   "lutris"
   "man-db"
   "man-pages"
-  "mictray"
   "monero-gui"
   "mullvad-vpn-bin"
   "neofetch"
