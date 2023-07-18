@@ -173,8 +173,6 @@ vim.keymap.set('t', '<C-w>', '<C-\\><C-n><C-w>', {silent = true, noremap = true}
 
 --toggle terminal mode
 vim.keymap.set('n', '<leader>t', ':lua toggle_terminal()<Enter>', {noremap = true, silent = true});
--- vim.keymap.set('t', '<C-w>t', '<C-\\><C-n>:lua toggle_terminal()<Enter>', {noremap = true, silent = true});
-
 
 
 -- toggle terminal functions
@@ -189,10 +187,7 @@ function toggle_terminal()
     vim.cmd('wincmd p')
   end
 
-  -- vim.cmd('echo "'..success..'"')
 end
-
---vim.keymap.set('n', '<leader>t', toggle_terminal());
 
 --always enter insert mode when entering a terminal
 vim.cmd[[
@@ -403,7 +398,8 @@ local servers = {
   rust_analyzer = {},
   tsserver = {},
   jdtls = {},
-  --kotlin-language-server = {},
+  lua_ls = {},
+  -- kotlin-language-server = {},
 }
 
 -- Setup neovim lua configuration
@@ -478,13 +474,6 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
-
---allows autopairs to work with nvim.cmp
-local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-cmp.event:on(
-  'confirm_done',
-  cmp_autopairs.on_confirm_done()
-)
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
