@@ -111,7 +111,6 @@ PKGS=(
   "dmenu"
   "evince"
   "feh"
-  "firefox"
   "gnome-boxes"
   "gnome-calculator"
   "gnome-disk-utility"
@@ -147,8 +146,11 @@ PKGS=(
   "tmux"
   "unzip"
   "vlc"
+  "waterfox-g-bin"
   "wine"
   "xfce4-screenshooter"
+  "xterm"
+  "xorg-xerver"
   "zip"
 )
 
