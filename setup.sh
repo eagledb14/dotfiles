@@ -132,6 +132,7 @@ PKGS=(
   "openssh"
   "pop-gtk-theme-git"
   "pop-icon-theme-git"
+  "pavu-control"
   "pulseaudio"
   "pulseaudio-also"
   "pulseaudio-bluetooth"
