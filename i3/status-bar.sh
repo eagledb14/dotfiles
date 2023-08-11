@@ -4,7 +4,7 @@
 while :
 do
   date=$(date +"%a %b %e, %H:%M:%S")
-  volume=$(pactl list sinks | grep -A 11 -e 'State: RUNNING' -e 'State: IDLE' | grep -m 1 Volume | awk '{print $5}' ORS='')
+  volume=$(pactl list sinks | grep -A 11 -e 'State: RUNNING' | grep -m 1 Volume | awk '{print $5}' ORS='')
 
   # battery="$(cat /sys/class/power_supply/BAT0/capacity)%"
   # bat_status=$(cat /sys/class/power_supply/BAT0/status)
