@@ -12,35 +12,28 @@ export PS1="\[$(tput bold)\]\[\033[38;5;129m\]\u\[$(tput sgr0)\]@\h \[$(tput sgr
 # new paths
 export PATH=/home/eagledb14/.cargo/bin:$PATH
 
+#vim keys
 set -o vi
 
 # aliases
-alias torify='torsocks'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias la='ls -A'
 alias vi='nvim'
-alias sx='sx i3'
-
 
 #functions
 #go to class folder
 function class {
-  cd ~/Sync/classes
-}
-
-#split tmux and start a coding session
-function edit {
-  tmux new-session -d
-  tmux split-window -h -p 75
-  tmux attach-session
+  cd ~/sync/classes
 }
 
 # go to project folder
 function proj {
-  cd ~/Sync/projects
+  cd ~/sync/projects
 }
 
-
+function storage {
+  cd /mnt/nvme1n1/
+}
 
 [[ ${BLE_VERSION-} ]] && ble-attach
