@@ -101,7 +101,7 @@ echo -e "\n"
 PKGS=(
   "alacritty"
   "arandr"
-  "bluetuith"
+  "bluetuith-bin"
   "bluez"
   "bluez-libs"
   "brave-bin"
