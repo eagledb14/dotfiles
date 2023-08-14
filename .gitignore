@@ -2,3 +2,4 @@ coc-settings.json
 plugin
 plugins
 .luarc.json
+lazy-lock.json
