@@ -127,7 +127,7 @@ PKGS=(
   "neofetch"
   "neovim"
   "networkmanager"
-  "npm"
+  "network-manager-applet"
   "obsidian-appimage"
   "openssh"
   "pop-gtk-theme-git"
