@@ -91,7 +91,6 @@ require('lazy').setup({
     },
   },
 
-
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
@@ -157,7 +156,6 @@ require('lazy').setup({
     opts = {}
   },
 
-
   -- colorscheme
   {
     "folke/tokyonight.nvim",
@@ -180,6 +178,7 @@ o.scrolloff = 8
 o.showmode = false
 o.hlsearch = false
 o.clipboard = 'unnamedplus'
+
 o.ignorecase = true
 o.smartcase = true
 o.updatetime = 250

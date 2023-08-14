@@ -149,6 +149,7 @@ PKGS=(
   "vlc"
   "waterfox-g-bin"
   "wine"
+  "xclip"
   "xfce4-screenshooter"
   "xterm"
   "xorg-xerver"
