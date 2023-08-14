@@ -208,13 +208,10 @@ exec ~/.config/i3/autopaper.sh ~/.config/wallpapers/ 1800
 #exec xset s off
 
 ##monitor settings
-# exec_always xrandr --output DisplayPort-0 --off --output DisplayPort-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DisplayPort-2 --off --output HDMI-A-0 --mode 1920x1080 --pos 1920x0 --rotate normal
-
 exec_always xrandr --output DP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-2 --off --output DP-3 --off --output HDMI-1 --mode 1920x1080 --pos 1920x0 --rotate normal
 
 #custom startup appli#cations
 exec syncthing
-exec mictray
 
 #custom keybinds
 # bindsym XF86MonBrightnessUp exec brightnessctl set +15%
