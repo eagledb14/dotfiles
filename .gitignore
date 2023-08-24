@@ -3,3 +3,4 @@ plugin
 plugins
 .luarc.json
 lazy-lock.json
+bookmarks

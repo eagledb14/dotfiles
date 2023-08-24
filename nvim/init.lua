@@ -244,7 +244,7 @@ vim.keymap.set('t', '<ESC>', '<C-\\><C-n>', {silent = true, noremap = true})
 vim.keymap.set('t', '<C-w>', '<C-\\><C-n><C-w>', {silent = true, noremap = true})
 
 --toggle terminal mode
-vim.keymap.set('n', '<leader>t', ':lua ToggleTerminal()<Enter>', {noremap = true, silent = true});
+vim.keymap.set('n', '<C-t>', ':lua ToggleTerminal()<Enter>', {noremap = true, silent = true});
 
 -- toggle terminal functions
 function ToggleTerminal()
