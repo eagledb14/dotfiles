@@ -20,8 +20,13 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias la='ls -A'
 alias vi='nvim'
-alias gc='git commit -a'
 alias gp='git push'
+
+
+function gc {
+  git add .
+  git commit 
+}
 
 #functions
 #go to class folder
