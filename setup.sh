@@ -111,7 +111,6 @@ PKGS=(
   "dmenu"
   "evince"
   "feh"
-  "gnome-boxes"
   "gnome-calculator"
   "gnome-disk-utility"
   "htop"
