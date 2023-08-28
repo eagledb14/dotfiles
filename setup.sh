@@ -171,6 +171,8 @@ rustup default stable > /dev/null 2>&1
 
 rm -- "$0"
 
+sudo systemctl enable bluetooth
+
 echo "Done!"
 sleep 3
 sudo reboot now
