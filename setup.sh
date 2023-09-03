@@ -105,19 +105,17 @@ PKGS=(
   "bluez"
   "bluez-libs"
   "brave-bin"
-  "brightness-ctl"
-  "curl"
   "discord"
   "dmenu"
   "evince"
   "feh"
   "gnome-calculator"
   "gnome-disk-utility"
+  "go"
   "htop"
   "i3-wm"
   "keepassxc"
   "kmonad"
-  "libreoffice-fresh"
   "lutris"
   "man-db"
   "man-pages"
@@ -127,6 +125,7 @@ PKGS=(
   "neovim"
   "networkmanager"
   "network-manager-applet"
+  "npm"
   "obsidian-appimage"
   "openssh"
   "pop-gtk-theme-git"
@@ -142,16 +141,12 @@ PKGS=(
   "sx"
   "syncthing-bin"
   "thunar"
-  "timeshift-bin"
   "tmux"
   "unzip"
   "vlc"
-  "waterfox-g-bin"
   "wine"
   "xclip"
   "xfce4-screenshooter"
-  "xterm"
-  "xorg-xerver"
   "zip"
 )
 
@@ -169,10 +164,10 @@ sudo rm -rf ~/go > /dev/null 2>&1
 
 rustup default stable > /dev/null 2>&1
 
-rm -- "$0"
-
 sudo systemctl enable bluetooth
 
 echo "Done!"
-sleep 3
+sleep 10
+#deleting script after it is finished
+rm -- "$0"
 sudo reboot now
