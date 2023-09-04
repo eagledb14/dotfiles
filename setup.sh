@@ -165,10 +165,6 @@ rustup default stable > /dev/null 2>&1
 echo SETTING UP: bluetooth 
 sudo systemctl enable bluetooth
 
-#echo SETTING UP: firefox config
-
-#curl https://raw.githubusercontent.com/yokoffing/Betterfox/main/user.js > user.js
-
 echo CLEANING UP
 sudo rm -rf ~/go > /dev/null 2>&1
 
