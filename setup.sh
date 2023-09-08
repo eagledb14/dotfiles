@@ -164,7 +164,7 @@ echo SETTING UP: rust install
 rustup default stable > /dev/null 2>&1
 
 echo SETTING UP: bluetooth 
-sudo systemctl enable bluetooth
+sudo systemctl enable bluetooth > /dev/null 2>&1
 
 echo CLEANING UP
 sudo rm -rf ~/go > /dev/null 2>&1
