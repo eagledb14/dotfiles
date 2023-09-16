@@ -142,6 +142,7 @@ PKGS=(
   "syncthing-bin"
   "thunar"
   "tmux"
+  "torbrowser-launcher"
   "unzip"
   "vlc"
   "waterfox-g-bin"
