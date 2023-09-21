@@ -125,7 +125,7 @@ default_border pixel
 
 #custom start commands
 ##wallpaper
-always ~/.config/sway/autopaper.sh ~/.config/wallpapers/ 1800
+exec ~/.config/sway/autopaper.sh ~/.config/wallpapers/ 1800
 
 ##monitor settings
 output "*" res 1920x1080
