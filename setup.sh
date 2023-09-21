@@ -1,7 +1,6 @@
 #!/bin/bash
-# to use on cli, use curl from
+# to use on cli, curl from
 # https://raw.githubusercontent.com/eagledb14/dotfiles/main/setup.sh
-
 
 # getting git setup options
 read -p "Enter git-username: " git_username
@@ -86,8 +85,8 @@ cd
 # removing unwanted packages that were probably added during install
 REMOVE_PKGS=(
   "lightdm"
-  "wayland"
   "xfce4"
+  "xorg-server"
 )
 
 for PKG in "${REMOVE_PKGS[@]}"; do
@@ -100,20 +99,19 @@ echo -e "\n"
 # installing other needed packages
 PKGS=(
   "alacritty"
-  "arandr"
   "bluetuith-bin"
   "bluez"
   "bluez-libs"
+  "brightnessctl-git"
   "discord"
-  "dmenu"
   "evince"
-  "feh"
   "fuse"
   "gnome-calculator"
   "gnome-disk-utility"
   "go"
+  "grim"
   "htop"
-  "i3-wm"
+  "imv"
   "keepassxc"
   "kmonad"
   "lutris"
@@ -128,27 +126,26 @@ PKGS=(
   "npm"
   "obsidian"
   "openssh"
-  "pop-gtk-theme-git"
-  "pop-icon-theme-git"
   "pavu-control"
   "pulseaudio"
   "pulseaudio-also"
   "pulseaudio-bluetooth"
   "qbittorrent"
   "rustup"
+  "slurp"
   "steam"
-  "sublime-text-4"
-  "sx"
+  "sway"
   "syncthing-bin"
   "thunar"
   "tmux"
+  "tofi"
   "torbrowser-launcher"
   "unzip"
   "vlc"
   "waterfox-g-bin"
   "wine"
-  "xclip"
-  "xfce4-screenshooter"
+  "wl-clipboard"
+  "xorg-xwayland"
   "zip"
 )
 
@@ -159,7 +156,7 @@ done
 
 echo -e "\n"
 
-#miscelanious extras
+#miscelanious
 
 echo SETTING UP: rust install
 rustup default stable > /dev/null 2>&1
@@ -172,6 +169,7 @@ sudo rm -rf ~/go > /dev/null 2>&1
 
 echo "Done!"
 sleep 10
+
 #deleting script after it is finished
 rm -- "$0"
 sudo reboot now

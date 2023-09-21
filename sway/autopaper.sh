@@ -36,8 +36,9 @@ sleep 5
 while true
 do
   rand=$((RANDOM % ($num_photos)))
-  feh --bg-scale ${photos[$rand]} &
-  pkill feh
+  pkill swaybg
+  swaybg -o "*" -i ${photos[$rand]} -m fill &
+  echo ${photos[$rand]}
 
   if [ $? -ne 0 ]; then 
     continue
@@ -46,5 +47,4 @@ do
   sleep $wait_time
 done
 
-
-trap "pkill feh" EXIT
+trap "pkill swaybg" EXIT
