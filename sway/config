@@ -3,10 +3,6 @@ set $mod Mod1
 
 font pango:monospace 8
 
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -129,13 +125,14 @@ default_border pixel
 
 #custom start commands
 ##wallpaper
-exec ~/.config/sway/autopaper.sh ~/.config/wallpapers/ 1800
+exec_always ~/.config/sway/autopaper.sh ~/.config/wallpapers/ 1800
 
 ##monitor settings
 output "*" res 1920x1080
 
-#custom startup appli#cations
+#startup appli#cations
 exec syncthing
+exec --no-startup-id nm-applet
 
 #custom keybinds
 # bindsym XF86MonBrightnessUp exec brightnessctl set +15%
