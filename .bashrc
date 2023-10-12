@@ -1,8 +1,9 @@
-# If running from tty1 start sway
-[ "$(tty)" = "/dev/tty1" ] && exec sway
-
+#
 # ~/.bashrc
 #
+
+# If running from tty1 start sway
+[ "$(tty)" = "/dev/tty1" ] && exec sway
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]]
