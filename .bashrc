@@ -46,4 +46,9 @@ function storage {
   cd /mnt/nvme1n1/
 }
 
+function new {
+  nohup alacritty --working-directory "$PWD" &>/dev/null &
+  disown
+}
+
 [[ ${BLE_VERSION-} ]] && ble-attach
