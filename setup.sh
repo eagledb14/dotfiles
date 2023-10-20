@@ -106,6 +106,7 @@ PKGS=(
   "brightnessctl-git"
   "discord"
   "evince"
+  "freetube"
   "fuse"
   "gnome-calculator"
   "gnome-disk-utility"
