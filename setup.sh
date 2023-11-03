@@ -141,6 +141,7 @@ PKGS=(
   "sway"
   "syncthing-bin"
   "thunar"
+  "tldr"
   "tmux"
   "tofi"
   "torbrowser-launcher"
