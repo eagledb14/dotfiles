@@ -116,6 +116,9 @@ bar {
         status_command ~/.config/sway/status-bar.sh 
         font 13px
         position top
+        colors {
+                background #00000080
+    }
 }
 
 
