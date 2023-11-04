@@ -139,6 +139,7 @@ PKGS=(
   "slurp"
   "steam"
   "sway"
+  "swaybg"
   "syncthing-bin"
   "thunar"
   "tldr"
