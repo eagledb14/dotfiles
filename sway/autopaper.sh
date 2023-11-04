@@ -2,7 +2,6 @@
 # how to use
 # args[1] is the directory where your photos are
 # args[2] is the amount of time it takes for the wallpaper to change
-# depends on feh to be installed
 
 while getopts "h" opt; do
   case $opt in
@@ -31,7 +30,6 @@ do
 done
 
 num_photos=${#photos[@]}
-sleep 5
 
 while true
 do

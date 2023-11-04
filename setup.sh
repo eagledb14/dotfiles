@@ -147,7 +147,7 @@ PKGS=(
   "torbrowser-launcher"
   "unzip"
   "vlc"
-  "waterfox-g-bin"
+  "waterfox-bin"
   "wine"
   "wlrobs-hg"
   "wl-clipboard"
@@ -170,6 +170,9 @@ rustup default stable > /dev/null 2>&1
 
 echo SETTING UP: bluetooth 
 sudo systemctl enable bluetooth > /dev/null 2>&1
+
+echo REMOVING BOOT TIMEOUT
+sudo echo "timeout 0" > /boot/loader/loader.conf
 
 echo CLEANING UP
 sudo rm -rf ~/go > /dev/null 2>&1
