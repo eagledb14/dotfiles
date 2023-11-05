@@ -10,13 +10,13 @@ read -p "Enter git-email: " git_email
 cd
 
 # create directories
-mkdir ~/documents > /dev/null 2>&1
-mkdir ~/Downloads > /dev/null 2>&1
-mkdir ~/.config > /dev/null 2>&1
+mkdir ~/documents &> /dev/null
+mkdir ~/Downloads &> /dev/null
+mkdir ~/.config &> /dev/null
 
 # upating before install
 echo -e "\nUPDATING COMPUTER"
-sudo pacman -Syy --noconfirm > /dev/null 2>&1
+sudo pacman -Syy --noconfirm &> /dev/null
 
 #welcoming the user
 clear
@@ -32,7 +32,7 @@ EOF
 
 #downloading git
 echo "INSTALLING: git"
-sudo pacman -S git --noconfirm > /dev/null 2>&1
+sudo pacman -S git --noconfirm &> /dev/null
 
 git config --global user.name $git_username
 git config --global user.email $git_email
@@ -41,12 +41,12 @@ git config --global core.editor nvim
 # download yay
 echo "DOWNLOADING: yay"
 cd ~/Downloads
-sudo git clone https://aur.archlinux.org/yay-git.git > /dev/null 2>&1
+sudo git clone https://aur.archlinux.org/yay-git.git &> /dev/null
 
 sudo chown -R $USER:$USER ./yay-git
 cd yay-git
 echo "INSTALLING: yay"
-makepkg -si --noconfirm > /dev/null 2>&1
+makepkg -si --noconfirm &> /dev/null
 
 cd ../
 rm -rf ./yay-git
@@ -56,7 +56,7 @@ cd
 echo "INSTALLING: dotfiles"
 cd ~/.config
 
-git clone https://github.com/eagledb14/dotfiles.git > /dev/null 2>&1
+git clone https://github.com/eagledb14/dotfiles.git &> /dev/null
 
 cd ./dotfiles
 ln -r -s -f ./* ~/.config/
@@ -67,9 +67,9 @@ cd
 # installing ble.sh
 echo "INSTALLING: ble.sh"
 cd ~/documents
-git clone --recursive https://github.com/akinomyoga/ble.sh.git > /dev/null 2>&1
+git clone --recursive https://github.com/akinomyoga/ble.sh.git &> /dev/null
 cd ble.sh
-make install > /dev/null 2>&1
+make install &> /dev/null
 cd ../
 rm -rf ble.sh
 
@@ -78,7 +78,7 @@ cd
 # installing wallpapers
 cd ~/.config
 echo -e "DOWNLOADING: Wallpapers\n"
-git clone https://github.com/eagledb14/wallpapers.git > /dev/null 2>&1
+git clone https://github.com/eagledb14/wallpapers.git &> /dev/null
 
 cd
 
@@ -91,7 +91,7 @@ REMOVE_PKGS=(
 
 for PKG in "${REMOVE_PKGS[@]}"; do
     echo "REMOVING: ${PKG}"
-    yay -Rcns "$PKG" --noconfirm > /dev/null 2>&1
+    yay -Rcns "$PKG" --noconfirm &> /dev/null
 done
 
 echo -e "\n"
@@ -159,7 +159,7 @@ PKGS=(
 
 for PKG in "${PKGS[@]}"; do
     echo "INSTALLING: ${PKG}"
-    yay -S "$PKG" --noconfirm --needed > /dev/null 2>&1
+    yay -S "$PKG" --noconfirm --needed > /dev/null
 done
 
 echo -e "\n"
@@ -167,16 +167,25 @@ echo -e "\n"
 #miscelanious
 
 echo SETTING UP: rust install
-rustup default stable > /dev/null 2>&1
+rustup default stable &> /dev/null
 
 echo SETTING UP: bluetooth 
-sudo systemctl enable bluetooth > /dev/null 2>&1
+sudo systemctl enable bluetooth &> /dev/null
 
 echo REMOVING BOOT TIMEOUT
-sudo echo "timeout 0" > /boot/loader/loader.conf
+if [[ -z $(ls /boot/grub 2> /dev/null) ]]; then
+  //removes boot timeout for systemd-boot
+  sudo echo "timeout 0" > /boot/loader/loader.conf
+else
+  //removes boot timeout for grub
+  yay -S update-grub &> /dev/null
+  sudo sed -i 's/^GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub &> /dev/null
+  update-grub &> /dev/null
+  yay -Rcns update-grub &> /dev/null
+fi
 
 echo CLEANING UP
-sudo rm -rf ~/go > /dev/null 2>&1
+sudo rm -rf ~/go &> /dev/null
 
 echo "Done!"
 sleep 10
