@@ -82,8 +82,6 @@ git clone https://github.com/eagledb14/wallpapers.git &> /dev/null
 
 cd
 
-echo -e "\n"
-
 # installing other needed packages
 PKGS=(
   "alacritty"
@@ -162,14 +160,14 @@ sudo systemctl enable bluetooth &> /dev/null
 
 echo REMOVING BOOT TIMEOUT
 if [[ -z $(ls /boot/grub 2> /dev/null) ]]; then
-  //removes boot timeout for systemd-boot
+  #removes boot timeout for systemd-boot
   sudo echo "timeout 0" > /boot/loader/loader.conf
 else
-  //removes boot timeout for grub
-  yay -S update-grub &> /dev/null
+  #removes boot timeout for grub
+  yay -S update-grub --noconfirm --needed &> /dev/null
   sudo sed -i 's/^GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub &> /dev/null
   update-grub &> /dev/null
-  yay -Rcns update-grub &> /dev/null
+  yay -Rcns update-grub --noconfirm &> /dev/null
 fi
 
 echo CLEANING UP
