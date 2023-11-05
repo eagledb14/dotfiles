@@ -1,7 +1,14 @@
+#!/bin/bash
 
 # how to use
 # args[1] is the directory where your photos are
 # args[2] is the amount of time it takes for the wallpaper to change
+
+cleanup() {
+  [[ -n $swaybg_pid ]] && kill "$swaybg_pid" 
+}
+
+trap cleanup EXIT
 
 while getopts "h" opt; do
   case $opt in
@@ -12,37 +19,27 @@ while getopts "h" opt; do
   esac
 done
 
-wait_time=
+wait_time=${2:-1}
 
-if [[ -z "$2" ]]; then
-  wait_time=1
-else
-  wait_time=$2
-fi
+directory=$1
 
-photos=()
-for file in $1*
-do
-  if [[ $file != $0 ]]; then
-    # echo $file
-    photos+=("$file")
-  fi
-done
+while true; do
+  photos=($(find "$directory" -type f \( \
+    -iname '*.jpg' -o \
+    -iname '*.jpeg' -o \
+    -iname '*.png' -o \
+    -iname '*.svg' \
+    \)))
 
-num_photos=${#photos[@]}
+  rand=$((RANDOM % ${#photos[@]}))
+  
+  kill $swaybg_pid &> /dev/null
+  swaybg -i ${photos[$rand]} -m fill &
+  swaybg_pid=$!
 
-while true
-do
-  rand=$((RANDOM % ($num_photos)))
-  pkill swaybg
-  swaybg -o "*" -i ${photos[$rand]} -m fill &
   echo ${photos[$rand]}
 
-  if [ $? -ne 0 ]; then 
-    continue
-  fi
-
-  sleep $wait_time
+  sleep "$wait_time"
 done
 
-trap "pkill swaybg" EXIT
+
