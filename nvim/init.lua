@@ -162,7 +162,7 @@ require('lazy').setup({
     opts = {},
   },
 
-  --transparent windows
+  -- transparent windows
   {
     "xiyaowong/transparent.nvim",
     groups = { -- table: default groups
@@ -173,6 +173,14 @@ require('lazy').setup({
     },
     extra_groups = {}, -- table: additional groups that should be cleared
     exclude_groups = {}, -- table: groups you don't want to clear
+  },
+
+  -- harpoon
+  {
+    "ThePrimeagen/harpoon",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    }
   }
 
 }, {})
@@ -525,6 +533,18 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+
+---- harpoon keymaps
+vim.keymap.set('n', '<leader>h', require("harpoon.ui").toggle_quick_menu, { desc = 'Toggle harpoon menu', silent = true, noremap = true })
+vim.keymap.set('n', '<leader>m', require("harpoon.mark").add_file, { desc = 'Add file to harpoon', silent = true, noremap = true})
+
+-- harpoon quick marks
+vim.keymap.set('n', '<leader>1', function() require("harpoon.ui").nav_file(1) end, {desc = 'goto harpoon file 1', silent = true, noremap = true})
+vim.keymap.set('n', '<leader>2', function() require("harpoon.ui").nav_file(2) end, {desc = 'goto harpoon file 2', silent = true, noremap = true})
+vim.keymap.set('n', '<leader>3', function() require("harpoon.ui").nav_file(3) end, {desc = 'goto harpoon file 3', silent = true, noremap = true})
+vim.keymap.set('n', '<leader>4', function() require("harpoon.ui").nav_file(4) end, {desc = 'goto harpoon file 4', silent = true, noremap = true})
+
+
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
