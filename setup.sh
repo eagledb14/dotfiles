@@ -165,7 +165,10 @@ if [[ -z $(ls /boot/grub 2> /dev/null) ]]; then
 else
   #removes boot timeout for grub
   yay -S update-grub --noconfirm --needed &> /dev/null
+
   sudo sed -i 's/^GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub &> /dev/null
+  sudo sed -i 's/^GRUB_TIMEOUT_STYLE=.*/GRUB_TIMEOUT_STYLE=hidden/' /etc/default/grub &> /dev/null
+
   update-grub &> /dev/null
   yay -Rcns update-grub --noconfirm &> /dev/null
 fi
