@@ -82,18 +82,6 @@ git clone https://github.com/eagledb14/wallpapers.git &> /dev/null
 
 cd
 
-# removing unwanted packages that were probably added during install
-REMOVE_PKGS=(
-  "lightdm"
-  "xfce4"
-  "xorg-server"
-)
-
-for PKG in "${REMOVE_PKGS[@]}"; do
-    echo "REMOVING: ${PKG}"
-    yay -Rcns "$PKG" --noconfirm &> /dev/null
-done
-
 echo -e "\n"
 
 # installing other needed packages
@@ -159,7 +147,7 @@ PKGS=(
 
 for PKG in "${PKGS[@]}"; do
     echo "INSTALLING: ${PKG}"
-    yay -S "$PKG" --noconfirm --needed > /dev/null
+    yay -S "$PKG" --noconfirm --needed &> /dev/null
 done
 
 echo -e "\n"
