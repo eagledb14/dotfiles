@@ -8,7 +8,7 @@ do
 
   # battery="$(cat /sys/class/power_supply/BAT0/capacity)%"
   # bat_status=$(cat /sys/class/power_supply/BAT0/status)
-
+  #
   # if [ "$bat_status" != "Discharging" ]; then
   #   battery="$bat_status"
   # fi
@@ -16,7 +16,7 @@ do
   # brightness=$(brightnessctl | grep "Current" | awk '{gsub(/[()]/, ""); print $4}')
 
 
-  # echo "$date | Brightness: $brightness | Battery: $battery |"
+  # echo "$date | Volume: $volumne | Brightness: $brightness | Battery: $battery |"
   echo "$date | Volume: $volume |"
   sleep 0.1
 done

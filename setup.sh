@@ -123,6 +123,7 @@ PKGS=(
   "qbittorrent"
   "rustup"
   "slurp"
+  "sof-firmware"
   "steam"
   "sway"
   "swaybg"
