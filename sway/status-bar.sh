@@ -16,7 +16,7 @@ do
   # brightness=$(brightnessctl | grep "Current" | awk '{gsub(/[()]/, ""); print $4}')
 
 
-  # echo "$date | Volume: $volumne | Brightness: $brightness | Battery: $battery |"
+  # echo "$date | Volume: $volume | Brightness: $brightness | Battery: $battery |"
   echo "$date | Volume: $volume |"
   sleep 0.1
 done
