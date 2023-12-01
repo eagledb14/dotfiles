@@ -3,12 +3,13 @@
 #
 
 # If running from tty1 start sway
-[ "$(tty)" = "/dev/tty1" ] && sway
+[ "$(tty)" = "/dev/tty1" ] && (ssh-agent sway)
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]]
 source ~/.local/share/blesh/ble.sh
-#PS1='[\u@\h \W]\$ '
+
+# export SSH_AUTH_SOCK=$(pgrep -u $USER -x ssh-agent -o)
 
 export PS1="\[$(tput bold)\]\[\033[38;5;129m\]\u\[$(tput sgr0)\]@\h \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;129m\]\W\[$(tput sgr0)\] \$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')> \[$(tput sgr0)\]"
 

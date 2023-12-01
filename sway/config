@@ -136,10 +136,11 @@ output "*" res 1920x1080
 #startup appli#cations
 exec syncthing
 exec --no-startup-id nm-applet
+exec --no-startup-id ssh-agent
 
 #custom keybinds
-# bindsym XF86MonBrightnessUp exec brightnessctl set +15%
-# bindsym XF86MonBrightnessDown exec brightnessctl set 15%-
+bindsym XF86MonBrightnessUp exec brightnessctl set +15%
+bindsym XF86MonBrightnessDown exec brightnessctl set 15%-
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
