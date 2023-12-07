@@ -269,7 +269,7 @@ vim.keymap.set('n', '<C-t>', ':lua ToggleTerminal()<Enter>', {noremap = true, si
 
 -- toggle terminal functions
 function ToggleTerminal()
-  local ok, _ = pcall(vim.cmd, 'bd! term')
+  local ok, _ = pcall(function() vim.cmd('bd! term') end)
   if not ok then
     vim.cmd('vsplit')
     vim.cmd('term')

@@ -9,12 +9,13 @@
 [[ $- != *i* ]]
 source ~/.local/share/blesh/ble.sh
 
-# export SSH_AUTH_SOCK=$(pgrep -u $USER -x ssh-agent -o)
-
 export PS1="\[$(tput bold)\]\[\033[38;5;129m\]\u\[$(tput sgr0)\]@\h \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;129m\]\W\[$(tput sgr0)\] \$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')> \[$(tput sgr0)\]"
 
 # new paths
 export PATH=/home/eagledb14/.cargo/bin:$PATH
+
+# new env
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 #vim keys
 set -o vi
