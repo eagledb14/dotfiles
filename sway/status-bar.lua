@@ -42,8 +42,8 @@ local function get_battery()
     return 'Battery: Error'
   end
 
-  local capacity = cap_file:read("*a") .. "%"
-  local status = status_file:read("*a")
+  local capacity = cap_file:read("*l") .. "%"
+  local status = status_file:read("*l")
   if status ~= 'Discharging' then
     return status .. ": " .. capacity
   end
