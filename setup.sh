@@ -180,9 +180,9 @@ else
 fi
 
 echo INSTALLING DEPENDENCIES
-luarocks install luaposix &> /dev/null
-luarocks install lanes &> /dev/null
-luarocks install luafilesystem &> /dev/null
+sudo luarocks install luaposix &> /dev/null
+sudo luarocks install lanes &> /dev/null
+sudo luarocks install luafilesystem &> /dev/null
 
 echo CLEANING UP
 sudo rm -rf ~/go &> /dev/null
