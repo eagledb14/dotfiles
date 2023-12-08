@@ -16,6 +16,7 @@ export PATH=/home/eagledb14/.cargo/bin:$PATH
 
 # new env
 export _JAVA_AWT_WM_NONREPARENTING=1
+export GOPATH=~/.config/go
 
 #vim keys
 set -o vi
@@ -26,6 +27,7 @@ alias grep='grep --color=auto'
 alias la='ls -A'
 alias vi='nvim'
 alias gp='git push'
+alias gs='git status'
 
 
 function gc {

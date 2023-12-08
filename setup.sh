@@ -10,7 +10,7 @@ read -p "Enter git-email: " git_email
 cd
 
 # create directories
-mkdir ~/documents &> /dev/null
+mkdir ~/Documents &> /dev/null
 mkdir ~/Downloads &> /dev/null
 mkdir ~/.config &> /dev/null
 
