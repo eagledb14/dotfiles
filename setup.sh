@@ -68,7 +68,7 @@ cd
 
 # installing ble.sh
 echo "INSTALLING: ble.sh"
-cd ~/documents
+cd ~/Documents
 git clone --recursive https://github.com/akinomyoga/ble.sh.git &> /dev/null
 cd ble.sh
 make install &> /dev/null
