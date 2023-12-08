@@ -3,8 +3,6 @@
 # https://raw.githubusercontent.com/eagledb14/dotfiles/main/setup.sh
 # or
 # https://blackman.zip/setup/
-#
-# curl https://blackman.zip/setup/ | bash
 
 # getting git setup options
 read -p "Enter git-username: " git_username
