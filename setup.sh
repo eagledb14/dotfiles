@@ -102,6 +102,8 @@ PKGS=(
   "imv"
   "keepassxc"
   "kmonad"
+  "lua"
+  "luarocks"
   "lutris"
   "man-db"
   "man-pages"
@@ -174,6 +176,11 @@ else
   update-grub &> /dev/null
   yay -Rcns update-grub --noconfirm &> /dev/null
 fi
+
+echo INSTALLING DEPENDENCIES
+luarocks install luaposix &> /dev/null
+luarocks install lanes &> /dev/null
+luarocks install luafilesystem &> /dev/null
 
 echo CLEANING UP
 sudo rm -rf ~/go &> /dev/null

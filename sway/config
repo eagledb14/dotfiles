@@ -113,7 +113,7 @@ bindsym $mod+p exec grim -g "$(slurp)" -t png ~/"screenshot$(date +'%T').png"
 
 bar {
         tray_output *
-        status_command ~/.config/sway/status-bar.sh 
+        status_command ~/.config/sway/status-bar.lua
         font 13px
         position top
         colors {
@@ -128,7 +128,7 @@ default_border pixel
 
 #custom start commands
 ##wallpaper
-exec ~/.config/sway/autopaper.sh ~/.config/wallpapers/ 1800
+exec ~/.config/sway/autopaper.lua ~/.config/wallpapers/ 1800
 
 ##monitor settings
 output "*" res 1920x1080
