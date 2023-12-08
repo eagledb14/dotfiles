@@ -1,5 +1,4 @@
 #!/usr/bin/lua
-local lanes = require("lanes").configure()
 local posix = require("posix")
 local lfs = require("lfs")
 
@@ -23,8 +22,11 @@ local function get_photo(photos)
 end
 
 local function change_wallpaper(photo)
-  os.execute('pkill swaybg')
-  os.execute("swaybg -i " .. photo .. " -m fill")
+  local new_child = posix.fork()
+  if new_child == 0 then
+    posix.execp("swaybg",  {"-i", photo, "-m", "fill"})
+  end
+  return new_child
 end
 
 local function main()
@@ -40,13 +42,14 @@ local function main()
   while true do
     local photo = get_photo(photos)
 
-    lanes.gen("*", change_wallpaper)(photo)
+    local child = change_wallpaper(photo)
 
     if #photos == 0 then
       photos = read_photos(dir)
     end
 
     posix.sleep(sleep)
+    posix.kill(child)
   end
 
 end
