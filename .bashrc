@@ -3,7 +3,7 @@
 #
 
 # If running from tty1 start sway
-[ "$(tty)" = "/dev/tty1" ] && (ssh-agent sway)
+[ "$(tty)" = "/dev/tty1" ] && ssh-agent sway
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]]
