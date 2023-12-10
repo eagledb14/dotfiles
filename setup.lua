@@ -6,6 +6,7 @@ local lfs = require"lfs"
 local posix = require"posix"
 local lanes = require"lanes"
 local user = os.getenv("SUDO_USER")
+local home = os.getenv("HOME") .. "/"
 
 local function exec(command)
   local success, exit, signal = os.execute(command .. " &> /dev/null")
@@ -28,9 +29,9 @@ end
 local function create_directories()
   -- print("Creating Directories")
 
-  lfs.mkdir("~/Documents")
-  lfs.mkdir("~/Downloads")
-  lfs.mkdir(".config")
+  lfs.mkdir(home .. "Documents")
+  lfs.mkdir(home .. "Downloads")
+  lfs.mkdir(home .. ".config")
 end
 
 -- install git/setup git
@@ -57,7 +58,7 @@ end
 
 -- download/install dotfiles
 local function install_dotfiles()
-  exec("git clone https://github.com/eagledb14/dotfiles.git " .. os.getenv("HOME") .. "/.config")
+  exec("git clone https://github.com/eagledb14/dotfiles.git " .. home .. ".config")
   exec("ln -r -s -f ~/.config/dotfiles/* ~/.config/")
   exec("ln -r -s -f ~/.config/dotfiles/.bashrc ~/")
 end
@@ -75,7 +76,7 @@ end
 
 -- download wallpapers
 local function install_wallpapers()
-  exec("git clone https://github.com/eagledb14/wallpapers.git " .. os.getenv("HOME") .. "/.config")
+  exec("git clone https://github.com/eagledb14/wallpapers.git " .. home .. ".config")
 end
 
 -- install all packages
@@ -145,7 +146,7 @@ end
 ---- remove the go thing
 ---- print done
 local function cleanup()
-  lfs.rmdir(os.getenv("HOME") .. "/go")
+  lfs.rmdir(home .. "go")
   print("DONE")
 end
 
