@@ -73,11 +73,11 @@ local packages = {
 
 local function exec(command)
   local success, exit, signal = os.execute(command .. " &> /dev/null")
-    if not success then
-        print("Error executing command: " .. command)
-        print("Exit code: " .. tostring(exit) .. " Signal: " .. tostring(signal))
-        os.exit(1)
-    end
+  if not success then
+      print("Error executing command: " .. command)
+      print("Exit code: " .. tostring(exit) .. " Signal: " .. tostring(signal))
+      os.exit(1)
+  end
 end
 
 local function user_exec(command)
@@ -102,21 +102,19 @@ local function setup_git(username, email)
   -- print("")
   exec("pacman -S git --noconfirm")
 
-  exec("git config --global user.name " .. username)
-  exec("git config --global user.email " .. email)
-  exec("git config --global core.editor nvim")
+  user_exec("git config --global user.name " .. username)
+  user_exec("git config --global user.email " .. email)
+  user_exec("git config --global core.editor nvim")
 end
 
 -- download/setup yay
 local function setup_yay()
-  exec("git clone https://aur.archlinux.org/yay-git.git")
-  exec("sudo chown -R $USER:$USER ./yay-git")
+  user_exec("git clone https://aur.archlinux.org/yay-git.git")
+  exec("chown -R $USER:$USER ./yay-git")
   exec("cd ./yay-git && makepkg -si --noconfirm ")
 
-  local success lfs.rmdir("./yay-git")
-  if not success then
-    print("failed to remove yay-git")
-  end
+  -- local success lfs.rmdir("./yay-git")
+  user_exec("rm -rf ./yay-git")
 end
 
 -- download/install dotfiles
