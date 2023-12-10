@@ -112,7 +112,7 @@ local function setup_yay()
   user_exec("git clone https://aur.archlinux.org/yay-git.git")
   user_exec("chown -R " .. user .. ":" .. user .. " ./yay-git")
 
-  --this is the only way I could get makepkg to run without requireing to reinput your password
+  --this is the only way I could get makepkg to run without requiring to reinput your password
   exec("cp /etc/sudoers /etc/sudoers.backup")
   exec("echo \"".. user .. " ALL = NOPASSWD: /usr/bin/pacman\" >> /etc/sudoers")
 
@@ -127,9 +127,11 @@ end
 
 -- download/install dotfiles
 local function install_dotfiles()
-  exec("git clone https://github.com/eagledb14/dotfiles.git " .. home .. ".config")
-  exec("ln -r -s -f ~/.config/dotfiles/* ~/.config/")
-  exec("ln -r -s -f ~/.config/dotfiles/.bashrc ~/")
+  user_exec("git clone https://github.com/eagledb14/dotfiles.git " .. home .. ".config/dotfiles")
+  lfs.chdir(".config/dotfiles/")
+  user_exec("ln -r -s -f ./* ../")
+  user_exec("ln -s .config/dotfiles/.bashrc " .. home)
+  lfs.chdir(home)
 end
 
 -- download/install ble.sh
