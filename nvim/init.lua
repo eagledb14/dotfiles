@@ -443,17 +443,8 @@ end
 --
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
-
-local function getLuaPath()
-  local handle = io.popen("luarocks path --ls-path", "r")
-  if handle then
-    local result = handle:read("*a")
-    handle:close()
-    return result
-  end
-end
-
-local luaRocksPath = getLuaPath()
+-- local luapath = os.getenv("HOME") .. '/.luarocks/lib/luarocks/rocks-5.4'
+local luapath = os.getenv("HOME") .. '/.luarocks/share/lua/5.4/'
 
 local servers = {
   html = { filetypes = { 'html', 'twig', 'hbs'} },
@@ -468,16 +459,20 @@ local servers = {
   lua_ls = {
     Lua = {
       runtime = {
-        version = 'LuaJIT',
+        path = vim.split(package.path, ';')
       },
       diagnostics = {
-        globals = ('vim')
+        globals = ('vim'),
+        disable = {'missing-fields'}
       },
       workspace = {
-        checkThirdParty = true },
+        checkThirdParty = true,
         library = {
-          [luaRocksPath] = true,
+          [luapath] = true,
+          [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+          [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
         },
+      },
       telemetry = { enable = false },
     },
   },
