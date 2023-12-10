@@ -5,6 +5,7 @@ os.execute('luarocks install lanes')
 local lfs = require"lfs"
 local posix = require"posix"
 local lanes = require"lanes"
+local user = os.getenv("SUDO_USER")
 
 local function exec(command)
   local success, exit, signal = os.execute(command .. " &> /dev/null")
@@ -15,8 +16,17 @@ local function exec(command)
     end
 end
 
+local function user_exec(command)
+  local success, exit, signal = os.execute("sudo -u " .. user .. " " ..command .. " &> /dev/null")
+    if not success then
+        print("Error executing command: " .. command)
+        print("Exit code: " .. tostring(exit) .. " Signal: " .. tostring(signal))
+        os.exit(1)
+    end
+end
+
 local function exec_yay(files)
-  exec("yay -S " .. files .. " --noconfirm --needed")
+  user_exec("yay -S " .. files .. " --noconfirm --needed")
 end
 
 -- create directories
@@ -120,7 +130,7 @@ local function remove_boot_timeout()
 
   --if it's grub
   if lfs.attributes(filePath, "mode") == "directory" then
-    remove_boot_timeout()
+    remove_grub_timeout()
   else
     remove_systemd_timeout()
   end
