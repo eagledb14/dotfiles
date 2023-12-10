@@ -8,67 +8,67 @@ local lanes = require"lanes"
 local user = os.getenv("SUDO_USER")
 local home = "/home/" .. user .. "/"
 local packages = {
-    "alacritty",
-    "bluetuith-bin",
-    "bluez",
-    "bluez-libs",
-    "bluez-utils",
-    "brightnessctl-git",
-    "discord",
-    "evince",
-    "freetube",
-    "fuse",
-    "gnome-calculator",
-    "gnome-disk-utility",
-    "go",
-    "grim",
-    "htop",
-    "imv",
-    "keepassxc",
-    "kmonad",
-    "lua",
-    "luarocks",
-    "lutris",
-    "man-db",
-    "man-pages",
-    "monero-gui",
-    "mullvad-vpn-bin",
-    "neofetch",
-    "neovim",
-    "networkmanager",
-    "network-manager-applet",
-    "npm",
-    "obsidian",
-    "obs-studio",
-    "openssh",
-    "pavu-control",
-    "pipewire",
-    "pipewire-alsa",
-    "pipewire-audio",
-    "pipewire-pulse",
-    "qbittorrent",
-    "rustup",
-    "slurp",
-    "sof-firmware",
-    "steam",
-    "sway",
-    "swaybg",
-    "syncthing-bin",
-    "thunar",
-    "tldr",
-    "tmux",
-    "tofi",
-    "torbrowser-launcher",
-    "ttf-ms-win10-auto",
-    "unzip",
-    "vlc",
-    "waterfox-bin",
-    "wine",
-    "wlrobs-hg",
-    "wl-clipboard",
-    "xdg-desktop-portal",
-    "xorg-xwayland",
-    "zip"
+  "alacritty",
+  "bluetuith-bin",
+  "bluez",
+  "bluez-libs",
+  "bluez-utils",
+  "brightnessctl-git",
+  "discord",
+  "evince",
+  "freetube",
+  "fuse",
+  "gnome-calculator",
+  "gnome-disk-utility",
+  "go",
+  "grim",
+  "htop",
+  "imv",
+  "keepassxc",
+  "kmonad",
+  "lua",
+  "luarocks",
+  "lutris",
+  "man-db",
+  "man-pages",
+  "monero-gui",
+  "mullvad-vpn-bin",
+  "neofetch",
+  "neovim",
+  "networkmanager",
+  "network-manager-applet",
+  "npm",
+  "obsidian",
+  "obs-studio",
+  "openssh",
+  "pavu-control",
+  "pipewire",
+  "pipewire-alsa",
+  "pipewire-audio",
+  "pipewire-pulse",
+  "qbittorrent",
+  "rustup",
+  "slurp",
+  "sof-firmware",
+  "steam",
+  "sway",
+  "swaybg",
+  "syncthing-bin",
+  "thunar",
+  "tldr",
+  "tmux",
+  "tofi",
+  "torbrowser-launcher",
+  "ttf-ms-win10-auto",
+  "unzip",
+  "vlc",
+  "waterfox-bin",
+  "wine",
+  "wlrobs-hg",
+  "wl-clipboard",
+  "xdg-desktop-portal",
+  "xorg-xwayland",
+  "zip"
 }
 
 local function exec(command)
@@ -136,18 +136,17 @@ end
 
 -- download/install ble.sh
 local function install_blesh()
-  exec("git clone --recursive https://github.com/akinomyoga/ble.sh.git")
-  exec("cd ./ble.sh && make install")
+  user_exec("git clone --recursive https://github.com/akinomyoga/ble.sh.git")
+  lfs.chdir("./ble.sh")
+  user_exec("make install")
 
-  local success lfs.rmdir("./ble.sh")
-  if not success then
-    print("failed to remove ble.sh")
-  end
+  lfs.chdir(home)
+  user_exec("rm -rf ./ble.sh")
 end
 
 -- download wallpapers
 local function install_wallpapers()
-  exec("git clone https://github.com/eagledb14/wallpapers.git " .. home .. ".config")
+  user_exec("git clone https://github.com/eagledb14/wallpapers.git " .. home .. ".config")
 end
 
 -- install all packages
@@ -250,8 +249,5 @@ local function main()
 end
 
 -- main()
-local function test()
-  remove_boot_timeout()
-end
 
 
