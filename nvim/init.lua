@@ -443,8 +443,8 @@ end
 --
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
--- local luapath = os.getenv("HOME") .. '/.luarocks/lib/luarocks/rocks-5.4'
-local luapath = os.getenv("HOME") .. '/.luarocks/share/lua/5.4/'
+local luapath = os.getenv("HOME") .. '/.luarocks/lib/luarocks/rocks-5.4'
+-- local luapath = os.getenv("HOME") .. '/.luarocks/share/lua/5.4/'
 
 local servers = {
   html = { filetypes = { 'html', 'twig', 'hbs'} },
@@ -466,7 +466,7 @@ local servers = {
         disable = {'missing-fields'}
       },
       workspace = {
-        checkThirdParty = true,
+        checkThirdParty = false,
         library = {
           [luapath] = true,
           [vim.fn.expand('$VIMRUNTIME/lua')] = true,
