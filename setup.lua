@@ -110,11 +110,19 @@ end
 -- download/setup yay
 local function setup_yay()
   user_exec("git clone https://aur.archlinux.org/yay-git.git")
-  exec("chown -R $USER:$USER ./yay-git")
-  exec("cd ./yay-git && makepkg -si --noconfirm ")
+  user_exec("chown -R " .. user .. ":" .. user .. " ./yay-git")
 
-  -- local success lfs.rmdir("./yay-git")
-  user_exec("rm -rf ./yay-git")
+  --this is the only way I could get makepkg to run without requireing to reinput your password
+  exec("cp /etc/sudoers /etc/sudoers.backup")
+  exec("echo \"".. user .. " ALL = NOPASSWD: /usr/bin/pacman\" >> /etc/sudoers")
+
+  lfs.chdir("./yay-git")
+  user_exec("makepkg -si --noconfirm ")
+
+  exec("mv /etc/sudoers.backup /etc/sudoers")
+
+  lfs.chdir(home)
+  exec("rm -rf ./yay-git")
 end
 
 -- download/install dotfiles

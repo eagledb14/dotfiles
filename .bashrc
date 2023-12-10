@@ -17,6 +17,8 @@ export PATH=/home/eagledb14/.cargo/bin:$PATH
 # new env
 export _JAVA_AWT_WM_NONREPARENTING=1
 export GOPATH=~/.config/go
+export EDITOR=nvim
+export VISUAL=nvim
 
 #vim keys
 set -o vi
