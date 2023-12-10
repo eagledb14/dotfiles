@@ -17,12 +17,7 @@ local function exec(command)
 end
 
 local function user_exec(command)
-  local success, exit, signal = os.execute("sudo -u " .. user .. " " ..command .. " &> /dev/null")
-    if not success then
-        print("Error executing command: " .. command)
-        print("Exit code: " .. tostring(exit) .. " Signal: " .. tostring(signal))
-        os.exit(1)
-    end
+  exec("sudo -u " .. user .. " " .. command)
 end
 
 local function exec_yay(files)
