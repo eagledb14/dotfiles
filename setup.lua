@@ -6,7 +6,7 @@ local lfs = require"lfs"
 local posix = require"posix"
 local lanes = require"lanes"
 local user = os.getenv("SUDO_USER")
-local home = os.getenv("HOME") .. "/"
+local home = "/home/" .. user .. "/"
 
 local function exec(command)
   local success, exit, signal = os.execute(command .. " &> /dev/null")
