@@ -85,7 +85,7 @@ local function user_exec(command)
 end
 
 local function exec_yay(files)
-  user_exec("yay -S " .. files .. " --noconfirm --needed")
+  user_exec("yay -S --noconfirm --needed " .. files)
 end
 
 -- create directories
@@ -146,7 +146,7 @@ end
 
 -- download wallpapers
 local function install_wallpapers()
-  user_exec("git clone https://github.com/eagledb14/wallpapers.git " .. home .. ".config")
+  user_exec("git clone https://github.com/eagledb14/wallpapers.git " .. home .. ".config/wallpapers")
 end
 
 -- install all packages
@@ -213,9 +213,11 @@ end
 
 -- clean up
 ---- remove the go thing
+---- change file syncing folder from Sync to sync
 ---- print done
 local function cleanup()
   lfs.rmdir(home .. "go")
+  user_exec("mv Sync sync")
   print("DONE")
 end
 
