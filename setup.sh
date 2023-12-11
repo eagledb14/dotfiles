@@ -137,7 +137,6 @@ PKGS=(
   "tmux"
   "tofi"
   "torbrowser-launcher"
-  "ttf-ms-win10-auto"
   "unzip"
   "vlc"
   "waterfox-bin"
