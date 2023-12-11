@@ -63,22 +63,22 @@ local packages = {
   "zip"
 }
 
-
 local function exec(command)
   local success, exit, signal = os.execute(command)
   if not success then
       print("Error executing command: " .. command)
       print("Exit code: " .. tostring(exit) .. " Signal: " .. tostring(signal))
-      os.exit(1)
   end
 end
 
 local function sudo_exec(command, password)
-  exec(string.format("echo %s | " .. command, password))
+  exec(string.format("echo %s | sudo " .. command, password))
 end
 
 local function exec_yay(password, files)
-  sudo_exec("yay -S --noconfirm --needed " .. files, password)
+  local command = string.format("yes %s | yay -S --noconfirm --needed %s", password, files)
+  print(command)
+  exec(command)
 end
 
 -- create directories
@@ -90,7 +90,6 @@ end
 
 -- install git/setup git
 local function setup_git(username, email, password)
-  -- print("")
   sudo_exec("pacman -S git --noconfirm", password)
 
   exec("git config --global user.name " .. username)
@@ -103,16 +102,9 @@ local function setup_yay(password)
   exec("git clone https://aur.archlinux.org/yay-git.git")
   exec("chown -R " .. user .. ":" .. user .. " ./yay-git")
 
-  local command = string.format("cd ./yay-git && echo %s | makepkg -si --clean --noconfirm")
+  local command = string.format("cd ./yay-git && echo %s | makepkg -si --clean --noconfirm", password)
   exec(command)
-  -- --this is the only way I could get makepkg to run without requiring to reinput your password
-  -- exec("cp /etc/sudoers /etc/sudoers.backup")
-  -- exec("echo \"".. user .. " ALL = NOPASSWD: /usr/bin/pacman\" >> /etc/sudoers")
-  -- user_exec("makepkg -si --clean --noconfirm ")
-
-  -- exec("mv /etc/sudoers.backup /etc/sudoers")
-
-  -- exec("rm -rf ./yay-git")
+  exec("rm -rf ./yay-git")
 end
 
 -- download/install dotfiles
