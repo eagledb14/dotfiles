@@ -76,7 +76,7 @@ local function sudo_exec(command, password)
 end
 
 local function exec_yay(password, files)
-  local command = string.format("yes %s | yay -S --noconfirm --needed %s", password, files)
+  local command = string.format("yes %s | yay -S --noconfirm --needed --sudoloop %s", password, files)
   print(command)
   exec(command)
 end
@@ -184,8 +184,8 @@ local function setup_rust()
 end
 
 -- setup bluetooth
-local function setup_bluetooth()
-  exec("sudo systemctl enable bluetooth")
+local function setup_bluetooth(password)
+  sudo_exec("systemctl enable bluetooth", password)
 end
 
 -- clean up
@@ -194,7 +194,7 @@ end
 ---- print done
 local function cleanup()
   lfs.rmdir(home .. "go")
-  user_exec("mv Sync sync")
+  exec("mv Sync sync")
   print("DONE")
 end
 
