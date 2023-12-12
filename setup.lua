@@ -127,9 +127,9 @@ local function install_wallpapers()
 end
 
 -- install all packages
-local function install_packages(l)
+local function install_packages(password)
   local package_string = table.concat(packages, " ")
-  exec_yay(package_string)
+  exec_yay(password, package_string)
 end
 
 -- check for grub or systemd boot
