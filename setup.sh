@@ -144,6 +144,7 @@ PKGS=(
   "wlrobs-hg"
   "wl-clipboard"
   "xdg-desktop-portal"
+  "xorg-xhosts"
   "xorg-xwayland"
   "zip"
 )
@@ -184,7 +185,10 @@ sudo luarocks install lanes &> /dev/null
 sudo luarocks install luafilesystem &> /dev/null
 
 echo CLEANING UP
+cd ~
 sudo rm -rf ~/go &> /dev/null
+sudo rm -rf Photos Templates Music 
+xhost si:localuser:root
 
 echo "Done!"
 sleep 10
