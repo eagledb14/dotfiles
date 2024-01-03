@@ -204,11 +204,10 @@ o.updatetime = 250
 o.timeoutlen = 300
 o.completeopt = 'menuone,noselect'
 
-o.tabstop = 2
-o.softtabstop = 2
-o.shiftwidth = 2
+o.tabstop = 4
+o.softtabstop = 4
+o.shiftwidth = 4
 o.expandtab = true
--- o.smartindent = true
 o.autoindent = true
 o.swapfile = false
 
