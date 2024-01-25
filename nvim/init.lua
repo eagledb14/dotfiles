@@ -210,6 +210,7 @@ o.shiftwidth = 4
 o.expandtab = true
 o.autoindent = true
 o.swapfile = false
+o.wrap = false
 
 -- window
 local w = vim.wo
