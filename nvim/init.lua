@@ -92,17 +92,7 @@ require('lazy').setup({
   },
 
   {
-    -- Set lualine as statusline
-    'nvim-lualine/lualine.nvim',
-    -- See `:help lualine.txt`
-    opts = {
-      options = {
-        icons_enabled = false,
-        theme = 'onedark',
-        component_separators = '|',
-        section_separators = '',
-      },
-    },
+    'beauwilliams/statusline.lua'
   },
 
   {
@@ -182,6 +172,11 @@ require('lazy').setup({
       "nvim-lua/plenary.nvim",
     }
   },
+
+  --codium
+  {
+    "Exafunction/codeium.vim"
+  }
 
 }, {})
 
@@ -523,28 +518,10 @@ cmp.setup {
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete {},
-    ['<CR>'] = cmp.mapping.confirm {
+    ['<C-y>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     },
-    ['<Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_locally_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
-    ['<S-Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.locally_jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
   },
   sources = {
     { name = 'nvim_lsp' },
@@ -561,6 +538,18 @@ vim.keymap.set('n', '<leader>1', function() require("harpoon.ui").nav_file(1) en
 vim.keymap.set('n', '<leader>2', function() require("harpoon.ui").nav_file(2) end, {desc = 'goto harpoon file 2', silent = true, noremap = true})
 vim.keymap.set('n', '<leader>3', function() require("harpoon.ui").nav_file(3) end, {desc = 'goto harpoon file 3', silent = true, noremap = true})
 vim.keymap.set('n', '<leader>4', function() require("harpoon.ui").nav_file(4) end, {desc = 'goto harpoon file 4', silent = true, noremap = true})
+
+-- Codeium
+vim.g.codeium_disable_bindings = 1
+vim.keymap.set('i', '<C-a>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+vim.keymap.set('i', '<c-.>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
+vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
+vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
+
+-- Reload nvim config
+vim.keymap.set('n', '<leader>R', ':luafile ~/.config/nvim/init.lua<CR>', { desc = 'Reload nvim config', silent = true, noremap = true })
+
+--add codeium to statusline to the end
 
 
 -- The line beneath this is called `modeline`. See `:help modeline`
