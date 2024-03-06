@@ -181,7 +181,7 @@ require('lazy').setup({
     dependencies = {
       "nvim-lua/plenary.nvim",
     }
-  }
+  },
 
 }, {})
 
@@ -455,6 +455,7 @@ local servers = {
   jdtls = {},
   gopls = {},
   bashls = {},
+  kotlin_language_server = {},
 
   lua_ls = {
     Lua = {
@@ -560,7 +561,6 @@ vim.keymap.set('n', '<leader>1', function() require("harpoon.ui").nav_file(1) en
 vim.keymap.set('n', '<leader>2', function() require("harpoon.ui").nav_file(2) end, {desc = 'goto harpoon file 2', silent = true, noremap = true})
 vim.keymap.set('n', '<leader>3', function() require("harpoon.ui").nav_file(3) end, {desc = 'goto harpoon file 3', silent = true, noremap = true})
 vim.keymap.set('n', '<leader>4', function() require("harpoon.ui").nav_file(4) end, {desc = 'goto harpoon file 4', silent = true, noremap = true})
-
 
 
 -- The line beneath this is called `modeline`. See `:help modeline`
