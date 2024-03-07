@@ -546,11 +546,9 @@ vim.keymap.set('i', '<c-.>', function() return vim.fn['codeium#CycleCompletions'
 vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
 vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
 
--- Reload nvim config
-vim.keymap.set('n', '<leader>R', ':luafile ~/.config/nvim/init.lua<CR>', { desc = 'Reload nvim config', silent = true, noremap = true })
-
---add codeium to statusline to the end
-
+--add a hotkey to disable codeium
+vim.keymap.set('n', '<leader>cd', ':lua vim.g.codeium_enabled = false<CR>', { desc = 'Disable codeium', silent = true, noremap = true })
+vim.keymap.set('n', '<leader>ce', ':lua vim.g.codeium_enabled = true<CR>', { desc = 'Enable codeium', silent = true, noremap = true })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
