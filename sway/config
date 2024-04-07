@@ -111,25 +111,14 @@ bindsym $mod+r mode "resize"
 #screenshot
 bindsym $mod+p exec grim -g "$(slurp)" -t png ~/"screenshot$(date +'%T').png"
 
-# bar {
-#         tray_output *
-#         status_command ~/.config/sway/status-bar.lua
-#         # status_command python3 ~/.config/sway/status-bar.py
-#         font 13px
-#         position top
-#         colors {
-#                 background #00000080
-#     }
-# }
-
-
 gaps outer 15px
 smart_gaps inverse_outer
 default_border pixel
 
 #custom start commands
 ##wallpaper
-exec ~/.config/sway/autopaper.lua ~/.config/wallpapers/ 1800
+# exec ~/.config/sway/autopaper.lua ~/.config/wallpapers/ 1800
+exec python3 ~/.config/sway/autopaper.py ~/.config/wallpapers/ 1800
 
 ##monitor settings
 output "*" res 1920x1080
