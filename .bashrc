@@ -7,8 +7,8 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]]
-# source ~/.local/share/blesh/ble.sh
-ble=${blesh-share}
+source ~/.local/share/blesh/ble.sh
+ble=$(blesh-share)
 source "${ble}/ble.sh" --attach=none
 
 export PS1="\[$(tput bold)\]\[\033[38;5;129m\]\u\[$(tput sgr0)\]@\h \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;129m\]\W\[$(tput sgr0)\] \$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')> \[$(tput sgr0)\]"
