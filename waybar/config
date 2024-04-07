@@ -1,0 +1,33 @@
+{
+    "layer": "bottom",
+    "position": "top",
+    "height": 20,
+    "spacing": 5,
+    "modules-left": ["sway/workspaces","sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": [ "clock", "pulseaudio", "battery","tray"],
+    "clock": {
+        "format": "{:%a %b %d, %H:%M} |",
+        "tooltip": false
+    },
+    "pulseaudio": {
+        "format": "Volume: {volume}% |",
+        "format-muted": "Muted: {volume}%",
+        "scroll-step": 1,
+        "on-click": "pavucontrol"
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "bat":"BAT1",
+        "format": "{icon} {capacity}% |",
+        "format-charging": " {capacity}% |",
+        "format-plugged": " {capacity}% |",
+        "format-discharging": " {capacity}% |",
+        "format-alt": "{icon} {time}",
+        "format-icons": ["", "", "", "", ""]
+    },
+}

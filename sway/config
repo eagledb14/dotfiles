@@ -111,15 +111,16 @@ bindsym $mod+r mode "resize"
 #screenshot
 bindsym $mod+p exec grim -g "$(slurp)" -t png ~/"screenshot$(date +'%T').png"
 
-bar {
-        tray_output *
-        status_command ~/.config/sway/status-bar.lua
-        font 13px
-        position top
-        colors {
-                background #00000080
-    }
-}
+# bar {
+#         tray_output *
+#         status_command ~/.config/sway/status-bar.lua
+#         # status_command python3 ~/.config/sway/status-bar.py
+#         font 13px
+#         position top
+#         colors {
+#                 background #00000080
+#     }
+# }
 
 
 gaps outer 15px
@@ -137,6 +138,7 @@ output "*" res 1920x1080
 exec syncthing
 exec --no-startup-id nm-applet
 exec --no-startup-id ssh-agent
+exec --no-startup-id waybar
 
 #custom keybinds
 bindsym XF86MonBrightnessUp exec brightnessctl set +15%
