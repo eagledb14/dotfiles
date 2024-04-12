@@ -8,13 +8,13 @@
 cd
 
 # create directories
-mkdir ~/Documents &> /dev/null
-mkdir ~/Downloads &> /dev/null
-mkdir ~/.config &> /dev/null
+mkdir ~/Documents
+mkdir ~/Downloads
+mkdir ~/.config
 
 # upating before install
 echo -e "\nUPDATING COMPUTER"
-sudo pacman -Syy --noconfirm &> /dev/null
+sudo pacman -Syy --noconfirm
 
 #welcoming the user
 clear
@@ -30,7 +30,7 @@ EOF
 
 #downloading git
 echo "INSTALLING: git"
-sudo pacman -S git --noconfirm &> /dev/null
+sudo pacman -S git --noconfirm
 
 git config --global user.name eagledb14
 git config --global user.email eagledb14@gmail.com
@@ -39,12 +39,12 @@ git config --global core.editor nvim
 # download yay
 echo "DOWNLOADING: yay"
 cd ~/Downloads
-sudo git clone https://aur.archlinux.org/yay-git.git &> /dev/null
+sudo git clone https://aur.archlinux.org/yay-git.git
 
 sudo chown -R $USER:$USER ./yay-git
 cd yay-git
 echo "INSTALLING: yay"
-makepkg -si --noconfirm &> /dev/null
+makepkg -si --noconfirm
 
 cd ../
 rm -rf ./yay-git
@@ -54,7 +54,7 @@ cd
 echo "INSTALLING: dotfiles"
 cd ~/.config
 
-git clone https://github.com/eagledb14/dotfiles.git &> /dev/null
+git clone https://github.com/eagledb14/dotfiles.git
 
 cd ./dotfiles
 ln -r -s -f ./* ~/.config/
@@ -66,9 +66,9 @@ cd
 # installing ble.sh
 echo "INSTALLING: ble.sh"
 cd ~/Documents
-git clone --recursive https://github.com/akinomyoga/ble.sh.git &> /dev/null
+git clone --recursive https://github.com/akinomyoga/ble.sh.git
 cd ble.sh
-make install &> /dev/null
+make install
 cd ../
 rm -rf ble.sh
 
@@ -77,87 +77,19 @@ cd
 # installing wallpapers
 cd ~/.config
 echo -e "DOWNLOADING: Wallpapers\n"
-git clone https://github.com/eagledb14/wallpapers.git &> /dev/null
+git clone https://github.com/eagledb14/wallpapers.git
 
 cd
 
-# installing other needed packages
-PKGS=(
-  "alacritty"
-  "bluetuith-bin"
-  "bluez"
-  "bluez-libs"
-  "bluez-utils"
-  "brightnessctl-git"
-  "discord"
-  "evince"
-  "floorp-bin"
-  "freetube"
-  "fuse"
-  "gnome-boxes"
-  "gnome-calculator"
-  "gnome-disk-utility"
-  "go"
-  "grim"
-  "htop"
-  "imv"
-  "keepassxc"
-  "kmonad"
-  "lutris"
-  "man-db"
-  "man-pages"
-  "monero-gui"
-  "mullvad-vpn-bin"
-  "ncdu"
-  "neofetch"
-  "neovim"
-  "networkmanager"
-  "network-manager-applet"
-  "noto-fonts-cjk"
-  "npm"
-  "obsidian"
-  "obs-studio"
-  "openssh"
-  "pavucontrol"
-  "pipewire"
-  "pipewire-alsa"
-  "pipewire-audio"
-  "pipewire-pulse"
-  "qbittorrent"
-  "slurp"
-  "sof-firmware"
-  "steam"
-  "sway"
-  "swaybg"
-  "syncthing-bin"
-  "thunar"
-  "tldr"
-  "tmux"
-  "tofi"
-  "torbrowser-launcher"
-  "unzip"
-  "vlc"
-  "waybar"
-  "wine"
-  "wlrobs-hg"
-  "wl-clipboard"
-  "xdg-desktop-portal"
-  "xorg-xhosts"
-  "xorg-xwayland"
-  "zip"
-)
-
-for PKG in "${PKGS[@]}"; do
-    echo "INSTALLING: ${PKG}"
-    yay -S "$PKG" --noconfirm --needed &> /dev/null
-done
+echo "INSTALLING PKGS"
+cat ./pkglist | yay --noconfirm --needed -S
 
 echo -e "\n"
 
 #miscelanious
 
 echo SETTING UP: bluetooth 
-sudo systemctl enable bluetooth &> /dev/null
+sudo systemctl enable bluetooth
 
 echo REMOVING BOOT TIMEOUT
 if [[ -z $(ls /boot/grub 2> /dev/null) ]]; then
@@ -165,18 +97,18 @@ if [[ -z $(ls /boot/grub 2> /dev/null) ]]; then
   sudo echo "timeout 0" > /boot/loader/loader.conf
 else
   #removes boot timeout for grub
-  yay -S update-grub --noconfirm --needed &> /dev/null
+  yay -S update-grub --noconfirm --needed
 
-  sudo sed -i 's/^GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub &> /dev/null
-  sudo sed -i 's/^GRUB_TIMEOUT_STYLE=.*/GRUB_TIMEOUT_STYLE=hidden/' /etc/default/grub &> /dev/null
+  sudo sed -i 's/^GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
+  sudo sed -i 's/^GRUB_TIMEOUT_STYLE=.*/GRUB_TIMEOUT_STYLE=hidden/' /etc/default/grub
 
-  sudo update-grub &> /dev/null
-  yay -Rcns update-grub --noconfirm &> /dev/null
+  sudo update-grub
+  yay -Rcns update-grub --noconfirm 
 fi
 
 echo CLEANING UP
 cd ~
-sudo rm -rf ~/go &> /dev/null
+sudo rm -rf ~/go
 sudo rm -rf Photos Templates Music 
 xhost si:localuser:root
 
