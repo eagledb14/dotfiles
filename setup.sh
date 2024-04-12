@@ -4,10 +4,6 @@
 # or
 # https://blackman.zip/setup/
 
-# getting git setup options
-read -p "Enter git-username: " git_username
-read -p "Enter git-email: " git_email
-
 # starting in home directory
 cd
 
@@ -36,8 +32,8 @@ EOF
 echo "INSTALLING: git"
 sudo pacman -S git --noconfirm &> /dev/null
 
-git config --global user.name $git_username
-git config --global user.email $git_email
+git config --global user.name eagledb14
+git config --global user.email eagledb14@gmail.com
 git config --global core.editor nvim
 
 # download yay
@@ -63,6 +59,7 @@ git clone https://github.com/eagledb14/dotfiles.git &> /dev/null
 cd ./dotfiles
 ln -r -s -f ./* ~/.config/
 ln -r -s -f .bashrc ~/
+ln -r -s -f .bash_profile ~/
 
 cd
 
@@ -106,8 +103,6 @@ PKGS=(
   "imv"
   "keepassxc"
   "kmonad"
-  "lua"
-  "luarocks"
   "lutris"
   "man-db"
   "man-pages"
@@ -118,6 +113,7 @@ PKGS=(
   "neovim"
   "networkmanager"
   "network-manager-applet"
+  "noto-fonts-cjk"
   "npm"
   "obsidian"
   "obs-studio"
@@ -128,7 +124,6 @@ PKGS=(
   "pipewire-audio"
   "pipewire-pulse"
   "qbittorrent"
-  "rustup"
   "slurp"
   "sof-firmware"
   "steam"
@@ -142,6 +137,7 @@ PKGS=(
   "torbrowser-launcher"
   "unzip"
   "vlc"
+  "waybar"
   "wine"
   "wlrobs-hg"
   "wl-clipboard"
@@ -160,9 +156,6 @@ echo -e "\n"
 
 #miscelanious
 
-echo SETTING UP: rust install
-rustup default stable &> /dev/null
-
 echo SETTING UP: bluetooth 
 sudo systemctl enable bluetooth &> /dev/null
 
@@ -177,14 +170,9 @@ else
   sudo sed -i 's/^GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub &> /dev/null
   sudo sed -i 's/^GRUB_TIMEOUT_STYLE=.*/GRUB_TIMEOUT_STYLE=hidden/' /etc/default/grub &> /dev/null
 
-  update-grub &> /dev/null
+  sudo update-grub &> /dev/null
   yay -Rcns update-grub --noconfirm &> /dev/null
 fi
-
-echo INSTALLING DEPENDENCIES
-sudo luarocks install luaposix &> /dev/null
-sudo luarocks install lanes &> /dev/null
-sudo luarocks install luafilesystem &> /dev/null
 
 echo CLEANING UP
 cd ~
