@@ -18,15 +18,6 @@ sudo pacman -Syy --noconfirm
 
 #welcoming the user
 clear
-echo "Welcome to:"
-cat << "EOF"
-     _     _ _        _    _              
-  _ | |___| | |_  _  | |  (_)_ _ _  ___ __
- | || / -_) | | || | | |__| | ' \ || \ \ /
-  \__/\___|_|_|\_, | |____|_|_||_\_,_/_\_\
-               |__/
-EOF
-
 
 #downloading git
 echo "INSTALLING: git"
@@ -82,7 +73,13 @@ git clone https://github.com/eagledb14/wallpapers.git
 cd
 
 echo "INSTALLING PKGS"
-cat ./pkglist | yay --noconfirm --needed -S
+yay -S pacdef --noconfirm --needed
+cd ~/.config/pkgs
+
+pacdef import base gui
+pacdef package sync --noconfirm
+pacdef package clean --noconfirm
+cd
 
 echo -e "\n"
 
