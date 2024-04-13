@@ -76,7 +76,7 @@ echo "INSTALLING PKGS"
 yay -S pacdef --noconfirm --needed
 cd ~/.config/pkgs
 
-pacdef import base gui
+pacdef group import base gui
 pacdef package sync --noconfirm
 pacdef package clean --noconfirm
 cd
