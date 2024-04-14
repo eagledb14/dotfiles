@@ -76,6 +76,8 @@ echo "INSTALLING PKGS"
 yay -S pacdef --noconfirm --needed
 cd ~/.config/pkgs
 
+# idk where rust is installed, but it causes download issues
+yay -Rs rust
 pacdef group import base gui
 pacdef package sync --noconfirm
 pacdef package clean --noconfirm
