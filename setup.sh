@@ -73,14 +73,13 @@ git clone https://github.com/eagledb14/wallpapers.git
 cd
 
 echo "INSTALLING PKGS"
-yay -S pacdef --noconfirm --needed
+yay -S pacdef-bin --noconfirm --needed
 cd ~/.config/pkgs
 
 # idk where rust is installed, but it causes download issues
-yay -Rs rust --noconfirm
 pacdef group import base gui
-pacdef package sync --noconfirm
 pacdef package clean --noconfirm
+pacdef package sync --noconfirm
 cd
 
 echo -e "\n"
