@@ -6,8 +6,9 @@
 [ "$(tty)" = "/dev/tty1" ] && ssh-agent sway
 
 # If not running interactively, don't do anything
-[[ $- != *i* ]]
-source ~/.local/share/blesh/ble.sh
+[[ $- != *i* ]] 
+source /usr/share/blesh/ble.sh --noattach
+
 
 export PS1="\[$(tput bold)\]\[\033[38;5;129m\]\u\[$(tput sgr0)\]@\h \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;129m\]\W\[$(tput sgr0)\] \$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')> \[$(tput sgr0)\]"
 
@@ -19,9 +20,6 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export GOPATH=~/.config/go
 export EDITOR=nvim
 export VISUAL=nvim
-
-#vim keys
-set -o vi
 
 # aliases
 alias ls='ls --color=auto'

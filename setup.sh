@@ -54,17 +54,6 @@ ln -r -s -f .bash_profile ~/
 
 cd
 
-# installing ble.sh
-echo "INSTALLING: ble.sh"
-cd ~/Documents
-git clone --recursive https://github.com/akinomyoga/ble.sh.git
-cd ble.sh
-make install
-cd ../
-rm -rf ble.sh
-
-cd
-
 # installing wallpapers
 cd ~/.config
 echo -e "DOWNLOADING: Wallpapers\n"
@@ -76,7 +65,6 @@ echo "INSTALLING PKGS"
 yay -S pacdef-bin --noconfirm --needed
 cd ~/.config/pkgs
 
-# idk where rust is installed, but it causes download issues
 pacdef group import base gui
 pacdef package clean --noconfirm
 pacdef package sync --noconfirm

@@ -2,6 +2,7 @@
 amd-ucode
 base
 base-devel
+blesh
 btrfs-progs
 fuse2
 git
