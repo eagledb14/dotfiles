@@ -5,7 +5,8 @@
 }
 
 window#waybar {
-    background-color: transparent;
+    /* background-color: transparent; */
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 #workspaces {
