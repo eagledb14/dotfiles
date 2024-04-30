@@ -5,20 +5,19 @@
 }
 
 window#waybar {
-    /* background-color: transparent; */
     background-color: rgba(0, 0, 0, 0.3);
 }
 
 #workspaces {
     background-color: transparent;
-    margin-left: 10px;
     font-weight: bold;
 }
 
 #workspaces button {
     padding: 2px 6px;
     background-color: transparent;
-    color: #8a8a8a;
+    border-radius: 0px;
+    color: white;
 }
 
 #workspaces button:hover {
@@ -27,6 +26,7 @@ window#waybar {
 
 #workspaces button.focused {
     color: white;
+    border: 1px solid white;
     background-color: #0f94d2;
 }
 

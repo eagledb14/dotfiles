@@ -112,7 +112,9 @@ bindsym $mod+r mode "resize"
 #screenshot
 bindsym $mod+p exec grim -g "$(slurp)" -t png ~/"screenshot$(date +'%T').png"
 
-gaps outer 15px
+gaps top 0px
+gaps bottom 15px
+gaps horizontal 15px
 smart_gaps inverse_outer
 default_border pixel
 

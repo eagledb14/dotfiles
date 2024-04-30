@@ -11,6 +11,7 @@ gradle
 grub
 gst-plugin-pipewire
 htop
+jq
 keepassxc
 kotlin
 libev
