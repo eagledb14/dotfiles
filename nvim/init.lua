@@ -91,9 +91,9 @@ require('lazy').setup({
     },
   },
 
-  {
-    'beauwilliams/statusline.lua'
-  },
+  -- {
+  --   'beauwilliams/statusline.lua'
+  -- },
 
   {
     -- Add indentation guides even on blank lines
@@ -200,10 +200,9 @@ o.timeoutlen = 300
 o.completeopt = 'menuone,noselect'
 
 o.tabstop = 4
-o.tabs = false
 o.softtabstop = 4
 o.shiftwidth = 4
-o.noexpandtab = true
+o.expandtab = false
 o.autoindent = true
 o.swapfile = false
 o.wrap = false
@@ -543,9 +542,10 @@ vim.keymap.set('n', '<leader>4', function() require("harpoon.ui").nav_file(4) en
 -- Codeium
 vim.g.codeium_disable_bindings = 1
 vim.keymap.set('i', '<C-y>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
-vim.keymap.set('i', '<c-.>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
-vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
-vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
+vim.keymap.set('i', '<C-.>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
+vim.keymap.set('i', '<C-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
+vim.keymap.set('i', '<C-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
+
 
 --add a hotkey to disable codeium
 vim.keymap.set('n', '<leader>cd', ':lua vim.g.codeium_enabled = false<CR>', { desc = 'Disable codeium', silent = true, noremap = true })
