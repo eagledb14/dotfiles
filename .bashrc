@@ -60,7 +60,7 @@ function new {
 }
 
 function sf {
-  cd $(find ~ -type d | fzf --preview "ls {}")
+  cd $(find ~ -type d 2> /dev/null | fzf --preview "ls {}")
 }
 
 [[ ${BLE_VERSION-} ]] && ble-attach
