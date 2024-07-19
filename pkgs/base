@@ -4,7 +4,10 @@ base
 base-devel
 blesh
 btrfs-progs
+docker
+fastfetch
 fuse2
+fzf
 git
 go
 gradle
@@ -20,7 +23,6 @@ linux-firmware
 man-db
 man-pages
 ncdu
-neofetch
 neovim
 networkmanager
 nmap

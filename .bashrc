@@ -21,6 +21,9 @@ export GOPATH=~/.config/go
 export EDITOR=nvim
 export VISUAL=nvim
 
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH=$PATH:$(go env GOPATH)/bin
+
 # aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -28,6 +31,7 @@ alias la='ls -A'
 alias vi='nvim'
 alias gp='git push'
 alias gs='git status'
+alias yay='yay --sudoloop'
 
 
 function gc {
@@ -53,6 +57,10 @@ function storage {
 function new {
   nohup alacritty --working-directory "$PWD" &>/dev/null &
   disown
+}
+
+function sf {
+  cd $(find ~ -type d | fzf --preview "ls {}")
 }
 
 [[ ${BLE_VERSION-} ]] && ble-attach
