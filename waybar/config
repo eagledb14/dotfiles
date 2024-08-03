@@ -3,9 +3,18 @@
     "position": "top",
     "height": 20,
     "spacing": 5,
-    "modules-left": ["sway/workspaces","sway/mode"],
-    "modules-center": ["sway/window"],
+    "modules-left": ["hyprland/workspaces","hyprland/mode"],
+    "modules-center": ["hyprland/window"],
     "modules-right": [ "clock", "pulseaudio", "battery", "tray"],
+	"hyprland/workspaces": {
+		 "format": "{icon}",
+		 "on-scroll-up": "hyprctl dispatch workspace e+1",
+		 "on-scroll-down": "hyprctl dispatch workspace e-1"
+	},
+	"hyprland/window": {
+		"max-length": 200,
+		"separate-outputs": true
+	},
     "clock": {
         "format": "{:%a %b %d, %H:%M} |",
         "tooltip": false

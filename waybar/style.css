@@ -5,18 +5,22 @@
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 0 0 10px 10px;
 }
 
-#workspaces {
-    background-color: transparent;
+.modules-right, .modules-center, .modules-left {
+    background-color: rgba(0,119,179,0.6);
+    padding: 0 2px;
+    margin: 0 10px;
+    border-radius: 10px;
     font-weight: bold;
 }
 
 #workspaces button {
     padding: 2px 6px;
     background-color: transparent;
-    border-radius: 0px;
+    border-radius: 10px;
     color: white;
 }
 
@@ -24,10 +28,9 @@ window#waybar {
     box-shadow: inherit;
 }
 
-#workspaces button.focused {
+#workspaces button.active {
     color: white;
-    border: 1px solid white;
-    background-color: #0f94d2;
+    background-color: #33ccff;
 }
 
 #workspaces button.urgent {
