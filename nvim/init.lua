@@ -173,11 +173,6 @@ require('lazy').setup({
     }
   },
 
-  --codium
-  {
-    "Exafunction/codeium.vim"
-  }
-
 }, {})
 
 -- [[ Setting options ]]
@@ -538,18 +533,6 @@ vim.keymap.set('n', '<leader>1', function() require("harpoon.ui").nav_file(1) en
 vim.keymap.set('n', '<leader>2', function() require("harpoon.ui").nav_file(2) end, {desc = 'goto harpoon file 2', silent = true, noremap = true})
 vim.keymap.set('n', '<leader>3', function() require("harpoon.ui").nav_file(3) end, {desc = 'goto harpoon file 3', silent = true, noremap = true})
 vim.keymap.set('n', '<leader>4', function() require("harpoon.ui").nav_file(4) end, {desc = 'goto harpoon file 4', silent = true, noremap = true})
-
--- Codeium
-vim.g.codeium_disable_bindings = 1
-vim.keymap.set('i', '<C-y>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
-vim.keymap.set('i', '<C-.>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
-vim.keymap.set('i', '<C-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
-vim.keymap.set('i', '<C-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
-
-
---add a hotkey to disable codeium
-vim.keymap.set('n', '<leader>cd', ':lua vim.g.codeium_enabled = false<CR>', { desc = 'Disable codeium', silent = true, noremap = true })
-vim.keymap.set('n', '<leader>ce', ':lua vim.g.codeium_enabled = true<CR>', { desc = 'Enable codeium', silent = true, noremap = true })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
