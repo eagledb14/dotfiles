@@ -1,5 +1,4 @@
 [arch]
-amd-ucode
 base
 base-devel
 blesh
@@ -31,7 +30,6 @@ syncthing-bin
 tmux
 unrar
 unzip
-wine
 wireplumber
 wl-clipboard
 xorg-xhost
