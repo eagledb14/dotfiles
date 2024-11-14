@@ -1,0 +1,4 @@
+arch = [
+	"nvidia-dkms",
+	"nvidia-utils",
+]
