@@ -27,7 +27,6 @@ arch = [
 	"pacdef-bin",
 	"rustup",
 	"slurp",
-	"ssh-agent",
 	"syncthing-bin",
 	"tmux",
 	"unrar",
