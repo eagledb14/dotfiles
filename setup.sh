@@ -62,12 +62,10 @@ git clone https://github.com/eagledb14/wallpapers.git
 cd
 
 echo "INSTALLING PKGS"
-yay -S pacdef-bin --noconfirm --needed
+yay -S metapac --noconfirm --needed
 cd ~/.config/pkgs
 
-pacdef group import base gui
-pacdef package clean --noconfirm
-pacdef package sync --noconfirm
+metapac sync
 cd
 
 echo -e "\n"
