@@ -63,7 +63,6 @@ cd
 
 echo "INSTALLING PKGS"
 yay -S metapac --noconfirm --needed
-cd ~/.config/pkgs
 
 metapac sync
 cd
