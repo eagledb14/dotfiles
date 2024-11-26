@@ -92,7 +92,6 @@ function ToggleTerminal()
     vim.cmd('term')
     vim.cmd('vertical resize 50')
     vim.cmd('startinsert')
-    -- vim.cmd('wincmd p')
   end
 end
 
@@ -258,7 +257,7 @@ require('lazy').setup({
 
      fm.setup {
       glow = false,
-      theme = 'fluoromachine',
+      theme = 'retrowave',
       transparent = true,
      }
 
