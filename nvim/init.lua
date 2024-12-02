@@ -62,9 +62,16 @@ vim.keymap.set('n', '<C-t>', ':lua ToggleTerminal()<Enter>', {noremap = true, si
 -- Toggle netrw
 vim.keymap.set('n', '<leader>se', ':Ex<Enter>', {noremap = true, silent = true})
 
-
 -- Easier mapping of vim commands
 vim.keymap.set('n', ';', ':', {})
+
+-- Changing window navigation hotkeys
+vim.keymap.set('n', '<C-k>', '<C-w><C-k>', {silent = true, noremap = true})
+vim.keymap.set('n', '<C-j>', '<C-w><C-j>', {silent = true, noremap = true})
+vim.keymap.set('n', '<C-h>', '<C-w><C-h>', {silent = true, noremap = true})
+vim.keymap.set('n', '<C-l>', '<C-w><C-l>', {silent = true, noremap = true})
+vim.keymap.set('n', '<C-v>', '<C-w><C-v>', {silent = true, noremap = true})
+vim.keymap.set('n', '<C-s>', '<C-w><C-s>', {silent = true, noremap = true})
 
 
 
@@ -548,11 +555,6 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>3', function() require("harpoon.ui").nav_file(3) end, {desc = 'goto harpoon file 3', silent = true, noremap = true})
       vim.keymap.set('n', '<leader>4', function() require("harpoon.ui").nav_file(4) end, {desc = 'goto harpoon file 4', silent = true, noremap = true})
     end,
-  },
-
-  { -- Smear Cursor
-    "sphamba/smear-cursor.nvim",
-    opts = {},
   },
 
   { -- Add indentation guides even on blank lines
