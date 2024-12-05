@@ -63,4 +63,15 @@ function sf {
   cd $(find ~ -type d 2> /dev/null | fzf --preview "ls {}")
 }
 
+function init {
+    tmux new-session -d
+    name=$(tmux list-sessions -F '#{session_name}' | tail -n 1)
+
+    tmux new-window -t "$name:2"
+    tmux new-window -t "$name:3"
+
+    tmux select-window -t "$name:1"
+    tmux attach-session -t "$name"
+}
+
 [[ ${BLE_VERSION-} ]] && ble-attach
