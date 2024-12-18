@@ -60,12 +60,19 @@ vim.keymap.set('t', '<C-t>', '<C-\\><C-n>:lua ToggleTerminal()<Enter>', {noremap
 vim.keymap.set('n', '<C-t>', ':lua ToggleTerminal()<Enter>', {noremap = true, silent = true});
 
 -- Toggle netrw
-vim.keymap.set('n', '<leader>se', ':Ex<Enter>', {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>se', ':Oil<Enter>', {noremap = true, silent = true})
 
 
 -- Easier mapping of vim commands
 vim.keymap.set('n', ';', ':', {})
 
+-- Changing window navigation hotkeys
+vim.keymap.set('n', '<C-k>', '<C-w><C-k>', {silent = true, noremap = true})
+vim.keymap.set('n', '<C-j>', '<C-w><C-j>', {silent = true, noremap = true})
+vim.keymap.set('n', '<C-h>', '<C-w><C-h>', {silent = true, noremap = true})
+vim.keymap.set('n', '<C-l>', '<C-w><C-l>', {silent = true, noremap = true})
+vim.keymap.set('n', '<C-v>', '<C-w><C-v>', {silent = true, noremap = true})
+vim.keymap.set('n', '<C-s>', '<C-w><C-s>', {silent = true, noremap = true})
 
 
 -- [[ Custom Functions ]]
@@ -550,10 +557,6 @@ require('lazy').setup({
     end,
   },
 
-  { -- Smear Cursor
-    "sphamba/smear-cursor.nvim",
-    opts = {},
-  },
 
   { -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
@@ -592,5 +595,11 @@ require('lazy').setup({
       statuscolumn = { enabled = true },
       words = { enabled = true },
     },
+  },
+
+  {
+    'stevearc/oil.nvim',
+    ---@module 'oil'
+    opts = {},
   }
 }, {})
