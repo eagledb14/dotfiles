@@ -7,6 +7,8 @@ arch = [
 	"floorp-bin",
 	"freetube",
 	"gnome-boxes",
+	"gnome-calculator",
+	"gnome-disk-utility",
 	"grim",
 	"gst-plugin-pipewire",
 	"hyprland",

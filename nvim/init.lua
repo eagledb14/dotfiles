@@ -66,14 +66,6 @@ vim.keymap.set('n', '<leader>se', ':Oil<Enter>', {noremap = true, silent = true}
 -- Easier mapping of vim commands
 vim.keymap.set('n', ';', ':', {})
 
--- Changing window navigation hotkeys
-vim.keymap.set('n', '<C-k>', '<C-w><C-k>', {silent = true, noremap = true})
-vim.keymap.set('n', '<C-j>', '<C-w><C-j>', {silent = true, noremap = true})
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', {silent = true, noremap = true})
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', {silent = true, noremap = true})
-vim.keymap.set('n', '<C-v>', '<C-w><C-v>', {silent = true, noremap = true})
-vim.keymap.set('n', '<C-s>', '<C-w><C-s>', {silent = true, noremap = true})
-
 
 -- [[ Custom Functions ]]
 
@@ -101,6 +93,13 @@ function ToggleTerminal()
     vim.cmd('startinsert')
   end
 end
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "v",
+  callback = function()
+      vim.bo.commentstring = "// %s"
+  end,
+})
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -597,9 +596,9 @@ require('lazy').setup({
     },
   },
 
-  {
+  { -- File explorer
     'stevearc/oil.nvim',
     ---@module 'oil'
     opts = {},
-  }
+  },
 }, {})
