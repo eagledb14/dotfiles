@@ -601,4 +601,11 @@ require('lazy').setup({
     ---@module 'oil'
     opts = {},
   },
+
+  {
+    "supermaven-inc/supermaven-nvim",
+      config = function()
+        require("supermaven-nvim").setup({})
+      end,
+  },
 }, {})
