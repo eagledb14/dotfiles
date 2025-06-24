@@ -6,21 +6,17 @@
 
 window#waybar {
     background-color: rgba(0, 0, 0, 0);
-    border-radius: 0 0 10px 10px;
 }
 
 .modules-right, .modules-center, .modules-left {
-    background-color: rgba(0,119,179,0.6);
-    padding: 0 2px;
-    margin: 0 10px;
-    border-radius: 10px;
+    background-color: #000000;
+    padding: 0 5px;
     font-weight: bold;
 }
 
 #workspaces button {
     padding: 2px 6px;
     background-color: transparent;
-    border-radius: 10px;
     color: white;
 }
 
@@ -31,6 +27,7 @@ window#waybar {
 #workspaces button.active {
     color: white;
     background-color: #33ccff;
+    border-radius: 0px;
 }
 
 #workspaces button.urgent {
