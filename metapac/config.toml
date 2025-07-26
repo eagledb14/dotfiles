@@ -1,3 +1,4 @@
+enabled_backends = ["arch"]
 arch_package_manager = "yay"
 
 [hostname_groups]
