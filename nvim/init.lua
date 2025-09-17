@@ -101,6 +101,12 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+vim.filetype.add({
+  extension = {
+    v = 'v'
+  }
+})
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 ---@diagnostic disable-next-line: undefined-field
@@ -516,12 +522,11 @@ require('lazy').setup({
     opts = {
       ensure_installed = { 'bash', 'c', 'diff', 'go', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'rust', 'vim', 'vimdoc' },
       -- Autoinstall languages that are not installed
-      auto_install = true,
+      -- auto_install = true,
       highlight = {
         enable = true,
         additional_vim_regex_highlighting = { 'ruby' },
       },
-      indent = { enable = true, disable = { 'ruby' } },
     },
   },
 
