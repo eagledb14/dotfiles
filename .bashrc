@@ -39,12 +39,6 @@ function gc {
   git commit 
 }
 
-#functions
-#go to class folder
-function class {
-  cd ~/sync/classes
-}
-
 # go to project folder
 function proj {
   cd ~/sync/projects
