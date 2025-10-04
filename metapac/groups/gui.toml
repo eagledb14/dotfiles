@@ -4,7 +4,7 @@ arch = [
 	"bluez-utils",
 	"discord",
 	"evince",
-	"floorp-bin",
+	"zen-browser-bin",
 	"freetube",
 	"gnome-boxes",
 	"gnome-calculator",
