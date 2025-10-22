@@ -4,7 +4,6 @@ arch = [
 	"bluez-utils",
 	"discord",
 	"evince",
-	"zen-browser-bin",
 	"freetube",
 	"gnome-boxes",
 	"gnome-calculator",
@@ -19,6 +18,7 @@ arch = [
 	"monero-gui",
 	"mullvad-vpn-bin",
 	"network-manager-applet",
+	"onlyoffice-bin",
 	"pavucontrol",
 	"pipewire",
 	"pipewire-alsa",
@@ -38,4 +38,5 @@ arch = [
 	"wpaperd",
 	"xdg-desktop-portal-hyprland",
 	"xorg-xwayland",
+	"zen-browser-bin",
 ]
