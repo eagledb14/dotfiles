@@ -33,7 +33,7 @@
         },
         "bat":"BAT0",
         "format": "Bat: {capacity}% |",
-        "format-charging": "Bat: {capacity}% |",
+        "format-charging": "Bat Ch: {capacity}% |",
         "format-plugged": "Bat: {capacity}% |",
         "format-discharging": "Bat: {capacity}% |",
         "format-alt": "Bat: {time}",
