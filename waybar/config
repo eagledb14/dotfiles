@@ -21,7 +21,7 @@
     },
     "pulseaudio": {
         "format": "Volume: {volume}% |",
-        "format-muted": "Muted: {volume}%",
+        "format-muted": "Muted: {volume}% |",
         "scroll-step": 1,
         "on-click": "pavucontrol"
     },
