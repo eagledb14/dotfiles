@@ -3,7 +3,7 @@
 #
 
 # If running from tty1 start sway
-[ "$(tty)" = "/dev/tty1" ] && ssh-agent Hyprland
+[ "$(tty)" = "/dev/tty1" ] && ssh-agent start-hyprland
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] 
