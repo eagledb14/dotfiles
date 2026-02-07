@@ -1,6 +1,6 @@
 #!/bin/bash
 # to use on cli, curl from
-# https://raw.githubusercontent.com/eagledb14/dotfiles/main/setup.sh
+# https://raw.githubusercontent.com/eagledb14/dotfiles/refs/heads/main/setup.sh
 # or
 # https://blackman.zip/setup/
 
@@ -14,9 +14,9 @@ mkdir ~/.config
 
 # upating before install
 echo -e "\nUPDATING COMPUTER"
-sudo pacman -Syy --noconfirm
+sudo pacman -Su --noconfirm
+sudo pacman -Syu --noconfirm
 
-#welcoming the user
 clear
 
 #downloading git
@@ -30,9 +30,9 @@ git config --global core.editor nvim
 # download yay
 echo "DOWNLOADING: yay"
 cd ~/Downloads
-sudo git clone https://aur.archlinux.org/yay-git.git
+sudo git clone https://aur.archlinux.org/yay-bin.git
 
-sudo chown -R $USER:$USER ./yay-git
+sudo chown -R $USER:$USER ./yay-bin
 cd yay-git
 echo "INSTALLING: yay"
 makepkg -si --noconfirm

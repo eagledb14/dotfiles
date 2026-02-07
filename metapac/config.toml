@@ -1,4 +1,5 @@
 enabled_backends = ["arch"]
+hostname_groups_enabled = true
 
 [hostname_groups]
 archlinux = ["default", "gui"]

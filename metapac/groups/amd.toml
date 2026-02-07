@@ -1,5 +1,7 @@
-arch = [
-	"amd-ucode",
-	"lib32-vulkan-radeon",
-	"vulkan-radeon",
-]
+arch = {
+	packages = [
+		"amd-ucode",
+		"lib32-vulkan-radeon",
+		"vulkan-radeon",
+	]
+}

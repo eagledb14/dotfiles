@@ -1,4 +1,6 @@
-arch = [
-	"nvidia-dkms",
-	"nvidia-utils",
-]
+arch = {
+	packages = [
+		"nvidia-dkms",
+		"nvidia-utils",
+	]
+}

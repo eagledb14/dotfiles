@@ -1,5 +1,7 @@
-arch = [
-	"brightnessctl",
-	"sof-firmware",
-	"tlp",
-]
+arch = {
+	packages = [
+		"brightnessctl",
+		"sof-firmware",
+		"tlp",
+	]
+}
