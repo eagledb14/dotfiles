@@ -1,6 +1,4 @@
 #!/bin/bash
-# no silent errors
-set -euo pipefail
 # to use on cli, curl from
 # https://raw.githubusercontent.com/eagledb14/dotfiles/refs/heads/main/setup.sh
 # or
@@ -14,9 +12,12 @@ mkdir ~/Documents
 mkdir ~/Downloads
 mkdir ~/.config
 
+# no silent errors
+set -euo pipefail
+
 # upating before install
 echo -e "\nUPDATING COMPUTER"
-sudo pacman -S archlinux-keyring
+sudo pacman -S archlinux-keyring --noconfirm
 sudo pacman -Su --noconfirm
 sudo pacman -Syu --noconfirm
 
@@ -66,9 +67,9 @@ cd
 
 echo "INSTALLING PKGS"
 yay -S metapac --noconfirm --needed
-yay -Rcns rust
+yay -Rcns rust --noconfirm
 
-metapac sync -no-confirm
+metapac sync --no-confirm
 cd
 
 echo -e "\n"
