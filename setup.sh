@@ -1,4 +1,6 @@
 #!/bin/bash
+# no silent errors
+set -euo pipefail
 # to use on cli, curl from
 # https://raw.githubusercontent.com/eagledb14/dotfiles/refs/heads/main/setup.sh
 # or
@@ -14,6 +16,7 @@ mkdir ~/.config
 
 # upating before install
 echo -e "\nUPDATING COMPUTER"
+sudo pacman -S archlinux-keyring
 sudo pacman -Su --noconfirm
 sudo pacman -Syu --noconfirm
 
@@ -33,12 +36,12 @@ cd ~/Downloads
 sudo git clone https://aur.archlinux.org/yay-bin.git
 
 sudo chown -R $USER:$USER ./yay-bin
-cd yay-git
+cd yay-bin
 echo "INSTALLING: yay"
 makepkg -si --noconfirm
 
 cd ../
-rm -rf ./yay-git
+rm -rf ./yay-bin
 cd
 
 # install dotfiles
@@ -63,8 +66,9 @@ cd
 
 echo "INSTALLING PKGS"
 yay -S metapac --noconfirm --needed
+yay -Rcns rust
 
-metapac sync
+metapac sync -no-confirm
 cd
 
 echo -e "\n"
@@ -91,7 +95,6 @@ fi
 
 echo CLEANING UP
 cd ~
-sudo rm -rf ~/go
 sudo rm -rf Photos Templates Music 
 xhost si:localuser:root
 

@@ -26,12 +26,9 @@ arch = {
 		"noto-fonts-cjk",
 		"npm",
 		"openssh",
-		"openssh",
-		"pacdef-bin",
 		"podman",
 		"python-pipenv",
 		"ripgrep",
-		"rustup",
 		"slurp",
 		"syncthing-bin",
 		"tailscale",
@@ -41,7 +38,6 @@ arch = {
 		"wl-clipboard",
 		"xorg-xhost",
 		"yay-bin",
-		"yt-dlp",
 		"zip",
 	]
 }
