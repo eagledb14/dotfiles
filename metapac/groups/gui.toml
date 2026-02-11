@@ -6,6 +6,7 @@ arch = {
 		"brave-bin",
 		"discord",
 		"evince",
+		"flatpak",
 		"gnome-boxes",
 		"gnome-calculator",
 		"gnome-disk-utility",
@@ -18,6 +19,7 @@ arch = {
 		"mako",
 		"monero-gui",
 		"network-manager-applet",
+		"noto-fonts-cjk",
 		"onlyoffice-bin",
 		"pavucontrol",
 		"pipewire",
@@ -38,5 +40,16 @@ arch = {
 		"wpaperd",
 		"xdg-desktop-portal-hyprland",
 		"xorg-xwayland",
+	]
+}
+
+flatpak = {
+	repos = [
+		{
+			name = "system:flathub",
+		}
+	],
+	packages = [
+		"com.stremio.Stremio",
 	]
 }
