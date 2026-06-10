@@ -1,4 +1,4 @@
-enabled_backends = ["arch"]
+enabled_backends = ["arch", "flatpak"]
 hostname_groups_enabled = true
 
 [hostname_groups]

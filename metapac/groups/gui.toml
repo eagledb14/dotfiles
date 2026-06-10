@@ -13,6 +13,7 @@ arch = {
 		"grim",
 		"gst-plugin-pipewire",
 		"hyprland",
+		"hyprpaper",
 		"imv",
 		"libpulse",
 		"lutris",
@@ -37,7 +38,6 @@ arch = {
 		"wine",
 		"wireplumber",
 		"wlr-randr",
-		"wpaperd",
 		"xdg-desktop-portal-hyprland",
 		"xorg-xwayland",
 	]

@@ -1,20 +1,20 @@
 {
     "layer": "bottom",
     "position": "top",
-    "height": 20,
+    "height": 28,
     "spacing": 5,
-    "modules-left": ["hyprland/workspaces","hyprland/mode"],
+    "modules-left": ["hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
     "modules-right": [ "clock", "pulseaudio", "battery", "tray"],
-	"hyprland/workspaces": {
-		 "format": "{icon}",
-		 "on-scroll-up": "hyprctl dispatch workspace e+1",
-		 "on-scroll-down": "hyprctl dispatch workspace e-1"
-	},
-	"hyprland/window": {
-		"max-length": 200,
-		"separate-outputs": true
-	},
+    "hyprland/workspaces": {
+            "format": "{icon}",
+            "on-scroll-up": "hyprctl dispatch \"hl.dsp.focus({workspace = 'e+1'})\" > /dev/null",
+            "on-scroll-down": "hyprctl dispatch \"hl.dsp.focus({workspace = 'e-1'})\" > /dev/null",
+    },
+    "hyprland/window": {
+            "max-length": 200,
+            "separate-outputs": true
+    },
     "clock": {
         "format": "{:%a %b %d, %H:%M} |",
         "tooltip": false
@@ -23,7 +23,8 @@
         "format": "Volume: {volume}% |",
         "format-muted": "Muted: {volume}% |",
         "scroll-step": 1,
-        "on-click": "pavucontrol"
+        "on-click": "sh -c '~/.config/waybar/cycle-sink.py next'",
+        "on-click-right": "sh -c '~/.config/waybar/cycle-sink.py prev'"
     },
     "battery": {
         "states": {
