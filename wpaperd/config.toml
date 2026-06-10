@@ -1,7 +1,0 @@
-[default]
-duration = "30m"
-mode = "center"
-
-
-[any]
-path = "~/.config/wallpapers"
