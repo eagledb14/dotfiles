@@ -25,7 +25,7 @@ clear
 
 #downloading git
 echo "INSTALLING: git"
-sudo pacman -S git --noconfirm
+sudo pacman -S git debugedit fakeroot binutils --noconfirm
 
 git config --global user.name eagledb14
 git config --global user.email eagledb14@gmail.com
