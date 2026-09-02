@@ -29,7 +29,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("waybar")
     hl.exec_cmd("mako")
     hl.exec_cmd("kdeconnectd")
-    hl.exec_cmd("kde-connect-indicator")
+    hl.exec_cmd("kdeconnect-indicator")
     hl.exec_cmd("hyprpaper")
 end)
 
