@@ -15,7 +15,7 @@
 export PS1="\[$(tput bold)\]\[\033[38;5;129m\]\u\[$(tput sgr0)\]@\h \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;129m\]\W\[$(tput sgr0)\] \$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')> \[$(tput sgr0)\]"
 
 # new paths
-export PATH=/home/eagledb14/.cargo/bin:$PATH
+export PATH=/home/still/.cargo/bin:/home/still/.local/bin:$PATH
 
 # new env
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -25,6 +25,9 @@ export VISUAL=nvim
 
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export PATH=$PATH:$(go env GOPATH)/bin
+
+# allows you to use sudo with cli applications
+export XAUTHORITY=~/.Xauthority
 
 # aliases
 alias ls='ls --color=auto'

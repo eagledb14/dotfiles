@@ -94,6 +94,9 @@ else
   yay -Rcns update-grub --noconfirm 
 fi
 
+#installs bashka
+curl --proto '=https' --tlsv1.2 -fsSL https://bashka.dmtrkovalenko.dev | bash
+
 echo CLEANING UP
 cd ~
 sudo rm -rf Photos Templates Music 
