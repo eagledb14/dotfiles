@@ -1,6 +1,6 @@
 arch = {
 	packages = [
-		"nvidia-dkms",
+		"nvidia-open-dkms",
 		"nvidia-utils",
 	]
 }
